@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
-import { client } from '@/sanity/lib/client'; // Adjust the path if needed
+import { client } from '@/sanity/lib/client'
 
 export default function Hero() {
   const [heroImages, setHeroImages] = useState<string[]>([]);

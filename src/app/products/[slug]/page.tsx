@@ -1,19 +1,18 @@
-// @/app/products/[slug]/page.tsx
-import { client } from '@/sanity/lib/client';
-import { PortableText } from '@portabletext/react';
-import { notFound } from 'next/navigation';
-import type { Metadata } from 'next';
-import { PortableTextBlock } from '@portabletext/types';
+import { client } from '@/sanity/lib/client'
+import { PortableText } from '@portabletext/react'
+import { notFound } from 'next/navigation'
+import type { Metadata } from 'next'
+import { PortableTextBlock } from '@portabletext/types'
 
-import TopBar from '@/app/Components/topbar';
-import Navbar from '@/app/Components/navbar';
-import Footer from '@/app/Components/footer';
-import ProductImageGallery from '@/app/Components/productimagegallery';
+import TopBar from '@/app/Components/topbar'
+import Navbar from '@/app/Components/navbar'
+import Footer from '@/app/Components/footer'
+import ProductImageGallery from '@/app/Components/productimagegallery'
 
 interface Product {
-  name: string;
-  description: PortableTextBlock[];
-  images: { asset: { url: string } }[];
+  name: string
+  description: PortableTextBlock[]
+  images: { asset: { url: string } }[]
 }
 
 const productQuery = `
@@ -34,36 +33,32 @@ const productQuery = `
       }
     }
   }
-`;
-
-interface GenerateMetadataProps {
-  params: { slug: string };
-  searchParams?: { [key: string]: string | string[] | undefined };
-}
+`
 
 export async function generateMetadata({ 
   params 
-}: GenerateMetadataProps): Promise<Metadata> {
-  const product: Product | null = await client.fetch(productQuery, { slug: params.slug });
+}: { 
+  params: { slug: string } 
+}): Promise<Metadata> {
+  const product: Product | null = await client.fetch(productQuery, { slug: params.slug })
   return {
     title: product?.name ?? 'Product',
     description: product?.description
       ? 'Explore more about ' + product.name
       : 'Detailed product page',
-  };
+  }
 }
 
-interface PageProps {
-  params: { slug: string };
-  searchParams?: { [key: string]: string | string[] | undefined };
-}
-
-export default async function ProductPage({ params }: PageProps) {
+export default async function ProductPage({ 
+  params 
+}: { 
+  params: { slug: string } 
+}) {
   const product: Product | null = await client.fetch(productQuery, {
     slug: params.slug,
-  });
+  })
 
-  if (!product) return notFound();
+  if (!product) return notFound()
 
   return (
     <>
@@ -188,5 +183,5 @@ export default async function ProductPage({ params }: PageProps) {
 
       <Footer />
     </>
-  );
+  )
 }

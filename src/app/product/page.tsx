@@ -3,9 +3,9 @@ import TopBar from '@/app/Components/topbar' // Lowercase filename as per your s
 import Navbar from '@/app/Components/navbar' // Lowercase filename
 // Note: Your folder structure doesn't show a footer.tsx - you'll need to create this
 import Footer from '@/app/Components/footer' 
-import DistributionBoards from './lowvoltageswitchgeardistributionboards'
+// import DistributionBoards from './lowvoltageswitchgeardistributionboards'
 import MediumVoltage from './mediumvoltageswitchgear'
-import Stainless from './stainlesssteelstructure' // Fixed typo from original
+// import Stainless from './stainlesssteelstructure' // Fixed typo from original
 import Empty from './typetestedpanels'
 import Cable from './cabletraysandladder'
 
@@ -16,8 +16,8 @@ export default function HomePage() {
       <Navbar />
       <div className="flex-grow">
         <Products />
-        <DistributionBoards />
-        <Stainless />
+        {/* <DistributionBoards /> */}
+        {/* <Stainless /> */}
         <Empty /> 
         <MediumVoltage />
         <Cable />
