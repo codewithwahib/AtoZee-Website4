@@ -1,10 +1,12 @@
 "use client"
 
 import { useState, useRef } from "react"
+import Image from "next/image"
 
 type Image = {
   asset: {
     url: string
+    _id: string
   }
 }
 
@@ -41,10 +43,13 @@ export default function ProductImageGallery({
         onMouseLeave={() => setIsZoomVisible(false)}
         onMouseMove={handleMouseMove}
       >
-        <img
+        <Image
           src={mainImage}
           alt={`${productName} main image`}
           className="w-full h-full object-contain"
+          fill
+          sizes="(max-width: 768px) 100vw, 50vw"
+          priority
         />
 
         {/* Zoom Box */}
@@ -74,19 +79,24 @@ export default function ProductImageGallery({
           <div className="grid grid-cols-3 gap-4">
             {images.map((img, index) => (
               <button
-                key={index}
+                key={img.asset._id}
                 onClick={() => setMainImage(img.asset.url)}
                 className="focus:outline-none"
               >
-                <img
-                  src={img.asset.url}
-                  alt={`${productName} image ${index + 1}`}
-                  className={`w-full h-32 object-cover rounded-lg border-2 transition-all duration-200 ${
-                    img.asset.url === mainImage
-                      ? 'border-[#6B4F3B] ring-2 ring-[#6B4F3B]'
-                      : 'border-gray-300'
-                  } shadow-sm`}
-                />
+                <div className="relative w-full h-32">
+                  <Image
+                    src={img.asset.url}
+                    alt={`${productName} image ${index + 1}`}
+                    className={`rounded-lg border-2 transition-all duration-200 ${
+                      img.asset.url === mainImage
+                        ? 'border-[#6B4F3B] ring-2 ring-[#6B4F3B]'
+                        : 'border-gray-300'
+                    } shadow-sm`}
+                    fill
+                    sizes="100px"
+                    style={{ objectFit: 'cover' }}
+                  />
+                </div>
               </button>
             ))}
           </div>

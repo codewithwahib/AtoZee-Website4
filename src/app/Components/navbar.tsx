@@ -8,16 +8,26 @@ import { useState, useEffect } from "react";
 const navItems = [
   { href: "/", label: "Home" },
   { href: "/product", label: "Products" },
-  { href: "/about", label: "About" },
-  { href: "/careers", label: "Careers" },
+  { href: "/about", label: "About Us" },
+  { 
+    href: "/careers", 
+    label: "Careers",
+    subItems: [
+      { href: "/careers/introduction", label: "Introduction" },
+      { href: "/careers/training-program", label: "Training Program" },
+      { href: "/careers/current-openings", label: "Current Openings" },
+      { href: "/careers/apply-now", label: "Apply Now" },
+    ]
+  },
   { href: "/services", label: "Services" },
-  { href: "/contact", label: "Contact" },
+  { href: "/contact", label: "Contact Us" },
 ];
 
 export default function Navbar() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [careersHover, setCareersHover] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
@@ -27,15 +37,19 @@ export default function Navbar() {
       }
     };
 
-    // Set initial value
     handleResize();
-
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
+  };
+
+  const toggleCareersMenu = () => {
+    if (isMobile) {
+      setCareersHover(!careersHover);
+    }
   };
 
   return (
@@ -46,28 +60,96 @@ export default function Navbar() {
           <Image
             src="/quality.png"
             alt="Logo"
-            width={280}
-            height={280}
+            width={500}
+            height={550}
             priority
-            className="w-40 md:w-56 lg:w-64"
+            className="w-52 md:w-72 lg:w-80"
           />
         </Link>
 
         {/* Desktop Nav links */}
-        <div className="hidden md:flex gap-4">
+        <div className="hidden md:flex items-center gap-4">
           {navItems.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className={`px-5 py-3 rounded-lg transition-all duration-200 text-base sm:text-lg ${
-                pathname === item.href
-                  ? "bg-[#EEDFCC] text-[#6B4F3B] font-semibold underline"
-                  : "text-[#8B5E3C] hover:bg-[#F6EBD9] hover:text-[#6B4F3B] hover:underline"
-              }`}
-            >
-              {item.label}
-            </Link>
+            item.href === "/careers" ? (
+              <div 
+                key={item.href}
+                className="relative group"
+                onMouseEnter={() => setCareersHover(true)}
+                onMouseLeave={() => setCareersHover(false)}
+              >
+                <div className="flex items-center">
+                  <Link
+                    href={item.href}
+                    className={`px-6 py-4 rounded-sm transition-all duration-200 text-base sm:text-lg ${
+                      pathname === item.href || item.subItems?.some(subItem => pathname === subItem.href)
+                        ? "bg-[#EEDFCC] text-[#6B4F3B] font-semibold font-serif"
+                        : "text-[#8B5E3C] hover:bg-[#F6EBD9] hover:text-[#6B4F3B]"
+                    }`}
+                  >
+                    {item.label}
+                  </Link>
+                  <svg
+                    className={`w-6 h-6 ml-1 transition-transform duration-200 ${
+                      careersHover ? "rotate-180" : ""
+                    } ${pathname === item.href || item.subItems?.some(subItem => pathname === subItem.href) 
+                      ? "text-[#6B4F3B]" 
+                      : "text-[#8B5E3C]"}`}
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </svg>
+                </div>
+                {careersHover && (
+                  <div className="absolute left-0 mt-0 w-72 bg-white shadow-lg rounded-sm z-50 border border-gray-200 overflow-hidden">
+                    {item.subItems?.map((subItem, index) => (
+                      <div key={subItem.href}>
+                        <Link
+                          href={subItem.href}
+                          className={`block px-6 py-4 text-base ${
+                            pathname === subItem.href
+                              ? "bg-[#EEDFCC] text-[#6B4F3B] font-semibold font-serif"
+                              : "text-[#8B5E3C] hover:bg-[#F6EBD9] hover:text-[#6B4F3B] font-serif font-semibold"
+                          }`}
+                        >
+                          {subItem.label}
+                        </Link>
+                        {index < item.subItems.length - 1 && (
+                          <hr className="border-t border-gray-200 mx-4" />
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ) : (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={`px-5 py-3 rounded-sm transition-all duration-200 text-base sm:text-lg ${
+                  pathname === item.href
+                    ? "bg-[#EEDFCC] text-[#6B4F3B] font-semibold font-serif"
+                    : "text-[#8B5E3C] hover:bg-[#F6EBD9] hover:text-[#6B4F3B]"
+                }`}
+              >
+                {item.label}
+              </Link>
+            )
           ))}
+          {/* Quote Button */}
+          <Link
+            href="/quote"
+            className="ml-4 px-7 py-6 rounded-sm bg-[#6B4F3B] text-white font-semibold text-base sm:text-lg hover:bg-[#8B5E3C] transition-all duration-200"
+          >
+            Get a Quote
+          </Link>
         </div>
 
         {/* Mobile menu button */}
@@ -107,19 +189,80 @@ export default function Navbar() {
         <div className="md:hidden bg-white border-t border-gray-200">
           <div className="px-2 pt-2 pb-4 space-y-1">
             {navItems.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                onClick={() => setIsOpen(false)}
-                className={`block px-3 py-2 rounded-md text-base font-medium ${
-                  pathname === item.href
-                    ? "bg-[#EEDFCC] text-[#6B4F3C] font-semibold underline"
-                    : "text-[#8B5E3C] hover:bg-[#F6EBD9] hover:text-[#6B4F3B]"
-                }`}
-              >
-                {item.label}
-              </Link>
+              item.href === "/careers" ? (
+                <div key={item.href}>
+                  <button
+                    onClick={toggleCareersMenu}
+                    className={`w-full flex justify-between items-center px-3 py-2 rounded-sm text-base font-medium ${
+                      pathname === item.href || item.subItems?.some(subItem => pathname === subItem.href)
+                        ? "bg-[#EEDFCC] text-[#6B4F3C] font-semibold"
+                        : "text-[#8B5E3C] hover:bg-[#F6EBD9] hover:text-[#6B4F3B]"
+                    }`}
+                  >
+                    <span>{item.label}</span>
+                    <svg
+                      className={`w-4 h-4 transition-transform duration-200 ${
+                        careersHover ? "rotate-180" : ""
+                      }`}
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M19 9l-7 7-7-7"
+                      />
+                    </svg>
+                  </button>
+                  {careersHover && (
+                    <div className="pl-4 mt-1 space-y-0 rounded-sm overflow-hidden border-l border-gray-200">
+                      {item.subItems?.map((subItem, index) => (
+                        <div key={subItem.href}>
+                          <Link
+                            href={subItem.href}
+                            onClick={() => setIsOpen(false)}
+                            className={`block px-4 py-3 text-base font-medium ${
+                              pathname === subItem.href
+                                ? "bg-[#EEDFCC] text-[#6B4F3C] font-semibold"
+                                : "text-[#8B5E3C] hover:bg-[#F6EBD9] hover:text-[#6B4F3B]"
+                            }`}
+                          >
+                            {subItem.label}
+                          </Link>
+                          {index < item.subItems.length - 1 && (
+                            <hr className="border-t border-gray-200 mx-2" />
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ) : (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setIsOpen(false)}
+                  className={`block px-3 py-2 rounded-sm text-base font-medium ${
+                    pathname === item.href
+                      ? "bg-[#EEDFCC] text-[#6B4F3C] font-semibold"
+                      : "text-[#8B5E3C] hover:bg-[#F6EBD9] hover:text-[#6B4F3B]"
+                  }`}
+                >
+                  {item.label}
+                </Link>
+              )
             ))}
+            {/* Quote Button in Mobile */}
+            <Link
+              href="/quote"
+              onClick={() => setIsOpen(false)}
+              className="block mt-2 px-3 py-2 rounded-sm bg-[#6B4F3B] text-white font-semibold text-base text-center"
+            >
+              Get a Quote
+            </Link>
           </div>
         </div>
       )}

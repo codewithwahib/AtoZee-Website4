@@ -1,13 +1,8 @@
-'use client';
-import React from 'react';
-import Image from 'next/image';
+"use client";
+import Image from "next/image";
+import { useEffect, useRef } from "react";
 
-type Client = {
-  name: string;
-  logo: string;
-};
-
-const clients: Client[] = [
+const logos = [
   { name: 'Client 1', logo: '/c1.png' },
   { name: 'Client 2', logo: '/c2.png' },
   { name: 'Client 3', logo: '/c3.png' },
@@ -59,28 +54,54 @@ const clients: Client[] = [
   { name: 'Client 49', logo: '/c49.png' },
   { name: 'Client 50', logo: '/c50.png' },
 ];
+export default function LogoCarousel() {
+  const containerRef = useRef<HTMLDivElement>(null);
 
-export default function Clients() {
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+
+    const scroll = () => {
+      if (container.scrollLeft >= container.scrollWidth / 2) {
+        container.scrollLeft = 0;
+      } else {
+        container.scrollLeft += 1;
+      }
+    };
+
+    const interval = setInterval(scroll, 20);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <section className="py-20 bg-gray-50">
-      <div className="container mx-auto px-6">
-        <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12">
-          Trusted by Leading <span className="text-[#D3B683]">Clients</span>
-        </h2>
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center justify-center">
-          {clients.map((client, index) => (
-            <div key={index} className="flex items-center justify-center h-16">
-              <Image
-                src={client.logo}
-                alt={client.name}
-                width={160}
-                height={64}
-                className="max-h-16 w-auto object-contain hover:grayscale-0 transition duration-300"
-              />
-            </div>
-          ))}
-        </div>
+    <div className="py-12 bg-white overflow-hidden">
+      <div 
+        ref={containerRef}
+        className="flex items-center gap-4 w-full overflow-x-auto" // Changed gap from 16 to 8
+        style={{ 
+          scrollBehavior: 'smooth',
+          scrollbarWidth: 'none',
+          msOverflowStyle: 'none',
+        }}
+      >
+        {[...logos, ...logos].map((logo, index) => (
+          <div key={`${logo.name}-${index}`} className="flex-shrink-0">
+            <Image
+              src={logo.logo}
+              alt={logo.name}  
+              width={250} // Increased from 160
+              height={150} // Increased from 80
+              className="object-contain h-24 w-48 transition-all" // Changed from h-20 w-40
+            />
+          </div>
+        ))}
       </div>
-    </section>
+      
+      <style jsx>{`
+        .overflow-x-auto::-webkit-scrollbar {
+          display: none;
+        }
+      `}</style>
+    </div>
   );
 }

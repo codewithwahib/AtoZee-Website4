@@ -5,78 +5,66 @@ import Image from 'next/image';
 const products = [
   {
     title: 'Low Voltage Switchgear',
-    description: 'Complete solutions for efficient power distribution systems.',
     image: '/images/distribution.png',
     link: '/products/power-distribution',
   },
   {
-    title: 'Schneider Electric BlokSeT',
-    description: 'Smart systems for optimal energy utilization and monitoring.',
+    title: 'BlokSeT',
     image: '/images/energy-management.png',
     link: '/products/energy-management',
     logo: '/s1.png'
   },
   {
-    title: 'Schneider Electric PrismaSeT',
-    description: 'Advanced protection for electrical circuits and equipment.',
+    title: 'PrismaSeT',
     image: '/images/protection-devices.png',
     link: '/products/protection-devices',
     logo: '/s1.png'
   },
   {
-    title: 'SF Universal Panel',
-    description: 'Premium high-voltage solutions for industrial power management.',
-    image: '/images/hv-switchgear.png',
-    link: '/products/hv-switchgear',
+    title: ' Spacial SF Universal Enclosure',
+    image: '/images/protection-devices.png',
+    link: '/products/protection-devices',
     logo: '/s1.png'
   },
   {
     title: 'Medium Voltage Switchgear',
-    description: 'Smart control panels for streamlined operations and automation.',
     image: '/images/control-panels.png',
     link: '/products/control-panels',
   },
   {
     title: 'Distribution Box',
-    description: 'Organized and efficient power distribution for any scale.',
     image: '/images/distribution-boards.png',
     link: '/products/distribution-boards',
   },
   {
     title: 'Synchronization Panel',
-    description: 'Precision synchronization for multiple power sources.',
     image: '/images/sync-panel.png',
     link: '/products/synchronization',
   },
   {
-    title: 'Active Harmonic Filter',
-    description: 'Reduce harmonic distortion and improve power quality.',
+    title: 'Active Harmonic Filter Solution',
     image: '/images/harmonic-filter.png',
     link: '/products/harmonic-filters',
   },
   {
+    title: 'KIOSK Substations',
+    image: '/images/substation.png',
+    link: '/products/substations',
+  },
+  {
     title: 'Low Voltage Busway System',
-    description: 'Custom busbar systems for robust power distribution.',
     image: '/images/busway-system.png',
     link: '/products/busway-systems',
   },
   {
-    title: 'VSD (Variable Speed Drives)',
-    description: 'Energy efficient motor speed control solutions.',
-    image: '/images/vsd.png',
-    link: '/products/variable-speed-drives',
-  },
-  {
     title: 'Dry Type Transformer',
-    description: 'Safe, efficient and environmentally friendly transformers.',
     image: '/images/transformer.png',
     link: '/products/transformers',
   },
   {
-    title: 'Kiosk Substations',
-    description: 'Compact and reliable outdoor power distribution solutions.',
-    image: '/images/substation.png',
-    link: '/products/substations',
+    title: 'VSD (Variable Speed Drives)',
+    image: '/images/vsd.png',
+    link: '/products/variable-speed-drives',
   }
 ];
 
@@ -128,9 +116,6 @@ export default function Products() {
                   <h3 className="text-xl font-bold text-gray-800 group-hover:text-[#D3B683] transition-colors mb-2">
                     {product.title}
                   </h3>
-                  <p className="text-gray-600 text-sm line-clamp-2">
-                    {product.description}
-                  </p>
                 </div>
               </a>
             </div>

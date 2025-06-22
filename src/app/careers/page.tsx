@@ -4,7 +4,7 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import { PortableTextBlock } from '@portabletext/types'
 
-import TopBar from '@/app/Components/topbar'
+// import TopBar from '@/app/Components/topbar'
 import Navbar from '@/app/Components/navbar'
 import Footer from '@/app/Components/footer'
 import CareerClient from './careerclinent'
@@ -41,7 +41,7 @@ export default async function CareerPage() {
 
   return (
     <>
-      <TopBar />
+      {/* <TopBar /> */}
       <Navbar />
 
       {/* Top Banner */}

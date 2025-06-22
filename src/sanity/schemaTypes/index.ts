@@ -17,7 +17,8 @@ import { hero3 } from './hero3'
 import { hero4 } from './hero4'
 import { hero5 } from './hero5'
 import homeproduct from './mainp'
-
+import { ad } from './ad'
+import { pureImage } from './ourclients'
 
 
 
@@ -38,6 +39,8 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     // stainlesssteelstrcuture,
     typetestedpanels,
     cable1,
+    ad,
+    pureImage,   
     // cabletraysandladder,
   ],
 }

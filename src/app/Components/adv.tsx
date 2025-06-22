@@ -1,6 +1,5 @@
 'use client';
 import React from 'react';
-import Footer from './footer';
 import {
   FaCheckCircle,
   FaClock,
@@ -97,9 +96,6 @@ export default function Advantages() {
           <path d="M0,0 V30 Q600,90 1200,30 V0z" fill="currentColor" />
         </svg>
       </section>
-
-      {/* Footer component below section */}
-      <Footer />
     </>
   );
 }

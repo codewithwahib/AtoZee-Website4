@@ -2,7 +2,6 @@
 
 import React from 'react';
 import Link from 'next/link';
-import TopBar from '../Components/topbar';
 import Navbar from '../Components/navbar';
 import Footer from '../Components/footer';
 import Image from 'next/image';
@@ -11,7 +10,7 @@ import { FaIndustry, FaBuilding, FaTools, FaQuoteLeft } from 'react-icons/fa';
 export default function ServicesPage() {
   return (
     <>
-      <TopBar />
+      {/* <TopBar /> */}
       <Navbar />
 
       <main className="font-sans text-[#5a4a3c] bg-gradient-to-br from-white to-[#f9f5f1]">
@@ -112,9 +111,9 @@ export default function ServicesPage() {
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
               {[
-                { title: 'Manufacturing', icon: <FaIndustry className="text-5xl text-black" /> },
-                { title: 'Commercial Buildings', icon: <FaBuilding className="text-5xl text-black" /> },
-                { title: 'Utilities & Power', icon: <FaTools className="text-5xl text-black" /> },
+                { title: ' Product Quality and Reliability', icon: <FaIndustry className="text-5xl text-black" /> },
+                { title: 'Safety Features and Compliance', icon: <FaBuilding className="text-5xl text-black" /> },
+                { title: 'Customer Support and Service', icon: <FaTools className="text-5xl text-black" /> },
               ].map((item, index) => (
                 <div key={index} className="bg-white rounded-2xl p-6 shadow border hover:shadow-xl transition">
                   <div className="flex justify-center mb-4">{item.icon}</div>

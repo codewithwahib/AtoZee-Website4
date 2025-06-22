@@ -1,5 +1,5 @@
 import Products from './lowvoltageswitchgearpanels'
-import TopBar from '@/app/Components/topbar' // Lowercase filename as per your structure
+// import TopBar from '@/app/Components/topbar' // Lowercase filename as per your structure
 import Navbar from '@/app/Components/navbar' // Lowercase filename
 // Note: Your folder structure doesn't show a footer.tsx - you'll need to create this
 import Footer from '@/app/Components/footer' 
@@ -12,7 +12,7 @@ import Cable from './cabletraysandladder'
 export default function HomePage() {
   return (
     <main className="min-h-screen flex flex-col bg-white">
-      <TopBar />
+      {/* <TopBar /> */}
       <Navbar />
       <div className="flex-grow">
         <Products />

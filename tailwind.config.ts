@@ -18,16 +18,24 @@ const config: Config = {
         primary: '#1D4ED8',   // blue-700
         secondary: '#F97316', // orange-500
         accent: '#22C55E',    // green-500
-
-        // Additional colors for product page design
         lightbg: '#fdfbf8',
         brownPrimary: '#6B4F3B',
         brownSecondary: '#8B6E4F',
       },
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],
-        heading: ['Poppins', 'sans-serif'],
+        sans: ['Roboto', 'Inter', 'sans-serif'], // Roboto as primary sans-serif
+        heading: ['Roboto', 'Poppins', 'sans-serif'], // Roboto for headings
+        roboto: ['Roboto', 'sans-serif'], // Direct Roboto utility
         serif: ['ui-serif', 'Georgia', 'Cambria', '"Times New Roman"', 'Times', 'serif'],
+        montserrat: ['Montserrat', 'sans-serif'],
+        baskerville: ['"Libre Baskerville"', 'serif'],
+        bubble: ['"Comic Neue"', 'cursive'],
+      },
+      fontWeight: {
+        normal: '400',
+        medium: '500',
+        semibold: '600',
+        bold: '700',
       },
       spacing: {
         128: '32rem',
