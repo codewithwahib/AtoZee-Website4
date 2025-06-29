@@ -4,6 +4,12 @@ import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { client } from '@/sanity/lib/client'
+import { DM_Sans } from 'next/font/google'
+
+const dmsans = DM_Sans({ 
+  subsets: ['latin'],
+  weight: '700', // or use ['700'] if you need multiple weights
+});
 
 const productsQuery = `
   *[_type == "mediumvoltageswitchgear"]{
@@ -37,8 +43,8 @@ export default function Products() {
   return (
     <>
       {/* Product Cards */}
-      <section className="py-20 px-6 bg-gradient-to-br from-gray-100 via-white to-gray-100">
-        <h2 className="text-4xl font-serif font-bold mb-14 text-center text-gray-800">
+      <section className={`py-20 px-6 bg-gradient-to-br from-gray-100 via-white to-gray-100 ${dmsans.className}`}>
+        <h2 className="text-4xl font-bold mb-14 text-center text-gray-800">
           Medium Voltage Switchgears
         </h2>
 
@@ -60,7 +66,7 @@ export default function Products() {
                 </div>
               )}
               <div className="px-6 pt-4 pb-2 flex-grow">
-                <h3 className="text-2xl font-serif font-bold text-black tracking-tight mb-2 border-b border-gray-300 inline-block pb-1">
+                <h3 className="text-2xl font-bold text-black tracking-tight mb-2 border-b border-gray-300 inline-block pb-1">
                   {product.name}
                 </h3>
                 {product.type && (
@@ -70,7 +76,7 @@ export default function Products() {
               <div className="px-6 pb-6">
                 <Link 
                   href={`/products/${product.slug.current}`}
-                  className="w-full inline-block bg-white text-black border-2 border-black font-medium py-3 px-3 rounded transition-all duration-200 text-center hover:bg-blue-50 "
+                  className="w-full inline-block bg-white text-black border-2 border-black font-medium py-3 px-3 rounded transition-all duration-200 text-center hover:bg-blue-50"
                 >
                   View Details
                 </Link>

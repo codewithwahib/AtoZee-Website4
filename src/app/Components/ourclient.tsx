@@ -73,11 +73,18 @@ export default function LogoCarousel() {
     return () => clearInterval(interval);
   }, []);
 
-  return (
-    <div className="py-12 bg-white overflow-hidden">
+return (
+    <div className="py-12 bg-white overflow-hidden pt-20">
+      {/* Added "Our Clients" heading */}
+      <div className="max-w-7xl mx-auto px-4 mb-10">
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-center text-gray-800 mb-4 pb-5 tracking-wider" style={{ fontFamily: 'Roboto, sans-serif' }}>
+          Our Clients
+        </h2>
+      </div>
+
       <div 
         ref={containerRef}
-        className="flex items-center gap-4 w-full overflow-x-auto" // Changed gap from 16 to 8
+        className="flex items-center gap-8 w-full overflow-x-auto"
         style={{ 
           scrollBehavior: 'smooth',
           scrollbarWidth: 'none',
@@ -89,9 +96,9 @@ export default function LogoCarousel() {
             <Image
               src={logo.logo}
               alt={logo.name}  
-              width={250} // Increased from 160
-              height={150} // Increased from 80
-              className="object-contain h-24 w-48 transition-all" // Changed from h-20 w-40
+              width={250}
+              height={150}
+              className="object-contain h-24 w-48 transition-all hover:scale-105"
             />
           </div>
         ))}

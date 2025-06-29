@@ -1,4 +1,3 @@
-// tailwind.config.ts
 import type { Config } from 'tailwindcss'
 import forms from '@tailwindcss/forms'
 import typography from '@tailwindcss/typography'
@@ -23,23 +22,39 @@ const config: Config = {
         brownSecondary: '#8B6E4F',
       },
       fontFamily: {
-        sans: ['Roboto', 'Inter', 'sans-serif'], // Roboto as primary sans-serif
-        heading: ['Roboto', 'Poppins', 'sans-serif'], // Roboto for headings
-        roboto: ['Roboto', 'sans-serif'], // Direct Roboto utility
-        serif: ['ui-serif', 'Georgia', 'Cambria', '"Times New Roman"', 'Times', 'serif'],
+        sans: ['Noto Sans', 'Roboto', 'Inter', 'sans-serif'], // Added Noto Sans as primary sans
+        heading: ['Roboto', 'Poppins', 'sans-serif'],
+        roboto: ['Roboto', 'sans-serif'],
+        'roboto-slab': ['"Roboto Slab"', 'serif'],
+        'noto-sans': ['"Noto Sans"', 'sans-serif'], // Explicit Noto Sans family
+        serif: ['"Roboto Slab"', 'ui-serif', 'Georgia', 'Cambria', '"Times New Roman"', 'Times', 'serif'],
         montserrat: ['Montserrat', 'sans-serif'],
         baskerville: ['"Libre Baskerville"', 'serif'],
         bubble: ['"Comic Neue"', 'cursive'],
+        playfair: ['"Playfair Display"', 'serif'],
+        lora: ['Lora', 'serif'],
+        cormorant: ['Cormorant Garamond', 'serif']
       },
       fontWeight: {
+        thin: '100',
+        extralight: '200',
+        light: '300',
         normal: '400',
         medium: '500',
         semibold: '600',
         bold: '700',
+        extrabold: '800',
+        black: '900',
+      },
+      fontSize: {
+        '2xs': '0.625rem',
+        '3xl': '1.75rem',
+        '4xl': '2.25rem',
       },
       spacing: {
         128: '32rem',
         144: '36rem',
+        160: '40rem',
       },
       animation: {
         'fade-in': 'fadeIn 0.8s ease-in forwards',
@@ -75,6 +90,15 @@ const config: Config = {
           '0%, 100%': { transform: 'rotate(-1deg)' },
           '50%': { transform: 'rotate(1deg)' },
         },
+      },
+      letterSpacing: {
+        tightest: '-0.06em',
+        tighter: '-0.03em',
+        tight: '-0.015em',
+        normal: '0',
+        wide: '0.03em',
+        wider: '0.05em',
+        widest: '0.1em',
       },
     },
   },

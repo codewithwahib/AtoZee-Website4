@@ -1,38 +1,141 @@
-'use client';
-import { FaPhone, FaInstagram, FaFacebook, FaYoutube, FaLinkedin } from 'react-icons/fa';
+import { FaFacebook, FaYoutube, FaLinkedin, FaTwitter, FaInstagram } from 'react-icons/fa';
+import { SlCallIn } from "react-icons/sl";
+import { TfiEmail } from "react-icons/tfi";
+import { DM_Sans } from 'next/font/google';
+import { MdOutlineMessage  } from "react-icons/md";
 
-export default function TopBar() {
+const dmSans = DM_Sans({
+  subsets: ['latin'],
+  weight: ['400', '500', '700'],
+  variable: '--font-dm-sans'
+});
+
+const ContactBar = () => {
   return (
-    <div className="w-full bg-white text-black py-2 px-4 font-mono border-b border-gray-200">
-      <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
-        {/* Tracking Number */}
-        <div className="text-lg md:text-xl tracking-tight mb-2 md:mb-0"></div>
+    <div className={`${dmSans.variable} font-sans bg-white text-black py-4 px-6 shadow-md border-t border-gray-200`}>
+      <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
         
-        {/* Contact and Social Media */}
-        <div className="flex items-center space-x-4">
-          {/* Phone Number with right divider */}
-          <div className="flex items-center pr-4 border-r border-gray-300">
-            <FaPhone className="mr-2 text-gray-600" />
-            <span className="text-sm md:text-base">0321 8287151</span>
-          </div>
+        {/* Left Side - Email */}
+        <div className="flex items-center">
+          <a 
+            href="mailto:contact@example.com" 
+            className="flex items-center gap-3 hover:text-blue-600 transition-colors group"
+            aria-label="Email us"
+          >
+            <MdOutlineMessage  className="text-[#8B5E3C] text-2xl md:text-3xl group-hover:scale-110 transition-transform" />
+            <span className={`text-base md:text-lg font-medium tracking-wider ${dmSans.className}`}>
+Get Free Inquiry            </span>
+          </a>
+        </div>
+
+
+ <div className="hidden md:block h-8 w-px bg-gray-300 mx-4"></div>
+
+ 
+         <div className="flex items-center">
+          <a 
+            href="mailto:contact@example.com" 
+            className="flex items-center gap-3 hover:text-blue-600 transition-colors group"
+            aria-label="Email us"
+          >
+            <TfiEmail className="text-[#8B5E3C] text-2xl md:text-3xl group-hover:scale-110 transition-transform" />
+            <span className={`text-base md:text-lg font-medium tracking-wider ${dmSans.className}`}>
+info@atozee.net            </span>
+          </a>
+        </div>
+        
+        {/* Vertical Divider - Only on larger screens */}
+        <div className="hidden md:block h-8 w-px bg-gray-300 mx-4"></div>
+        
+        {/* Middle - Phone Number */}
+        <div className="flex items-center">
+          <a 
+            href="tel:+1234567890" 
+            className="flex items-center gap-3 hover:text-blue-600 transition-colors group"
+            aria-label="Call us"
+          >
+            <SlCallIn className="text-[#8B5E3C] text-2xl md:text-3xl group-hover:scale-110 transition-transform" />
+            <div className="flex flex-col sm:flex-row sm:items-center sm:gap-2">
+              {/* <span className={`text-base font-semibold md:text-lg ${dmSans.className}`}>
+                Talk to expert
+              </span> */}
+              <span className={`text-base md:text-lg font-medium tracking-wider ${dmSans.className}`}>
++92 321-8752630            </span>
+            </div>
+
+            
+          </a>
+        </div>
+
+
+        
+        
+        {/* Vertical Divider - Only on larger screens */}
+        <div className="hidden md:block h-8 w-px bg-gray-300 mx-4"></div>
+        
+        {/* Right Side - Social Media with dividers */}
+        <div className="flex items-center gap-5 md:gap-6">
+          <a 
+            href="https://facebook.com" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="hover:text-[#3b5998] transition-colors text-2xl"
+            aria-label="Facebook"
+          >
+            <FaFacebook />
+          </a>
           
-          {/* Social Media Icons with dividers */}
-         <div className="flex items-center space-x-4">
-  <a href="#" className="px-3 border-r border-black/10 text-blue-600 first:pl-0">
-    <FaFacebook size={18} />
-  </a>
-  <a href="#" className="px-3 border-r border-black/10 text-pink-600">
-    <FaInstagram size={18} />
-  </a>
-  <a href="#" className="px-3 border-r border-black/10 text-red-600">
-    <FaYoutube size={18} />
-  </a>
-  <a href="#" className="pl-3 text-blue-500">
-    <FaLinkedin size={18} />
-  </a>
-</div>
+          <div className="h-6 w-px bg-gray-300"></div>
+          
+          <a 
+            href="https://twitter.com" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="hover:text-[#1DA1F2] transition-colors text-2xl"
+            aria-label="Twitter"
+          >
+            <FaTwitter />
+          </a>
+          
+          <div className="h-6 w-px bg-gray-300"></div>
+          
+          <a 
+            href="https://youtube.com" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="hover:text-[#FF0000] transition-colors text-2xl"
+            aria-label="YouTube"
+          >
+            <FaYoutube />
+          </a>
+          
+          <div className="h-6 w-px bg-gray-300"></div>
+          
+          <a 
+            href="https://linkedin.com" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="hover:text-[#0077B5] transition-colors text-2xl"
+            aria-label="LinkedIn"
+          >
+            <FaLinkedin />
+          </a>
+          
+          <div className="h-6 w-px bg-gray-300"></div>
+          
+          <a 
+            href="https://instagram.com" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="hover:text-[#E1306C] transition-colors text-2xl"
+            aria-label="Instagram"
+          >
+            <FaInstagram />
+          </a>
         </div>
       </div>
     </div>
   );
-}
+};
+
+export default ContactBar;

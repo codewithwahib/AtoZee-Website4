@@ -88,7 +88,7 @@ export default function CareerClient({ jobs }: { jobs: Job[] }) {
             <form
               ref={formRef}
               onSubmit={() => setSubmitting(true)}
-              action="https://formsubmit.co/hassan.se2007@gmail.com"
+              action="https://formsubmit.co/hr@atozee.net"
               method="POST"
               encType="multipart/form-data"
               target="hidden_iframe"

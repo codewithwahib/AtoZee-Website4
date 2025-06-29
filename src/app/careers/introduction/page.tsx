@@ -1,27 +1,59 @@
-"use client";
+import React from 'react';
+import Image from 'next/image';
+import { DM_Sans } from 'next/font/google';
+import Navbar from '@/app/Components/navbar';
+import Footer from '@/app/Components/footer';
+import ContactBar from '@/app/Components/topbar';
 
-import Link from "next/link";
-import Image from "next/image";
-import Navbar from "@/app/Components/navbar";
-import Footer from "@/app/Components/footer";
+const dmSans = DM_Sans({
+  subsets: ['latin'],
+  weight: ['400', '500', '700'],
+  variable: '--font-dm-sans'
+});
 
-export default function IntroductionPage() {
+export default function CareerIntro() {
   return (
     <>
+      <ContactBar />
       <Navbar />
-      <div className="container mx-auto px-4 py-8">
-        <section className="max-w-3xl mx-auto text-center">
-          <h1 className="text-3xl font-bold text-blue-900 mb-4">
-            A to Zee Switchgear Engineering
+      
+      {/* Banner Image Section */}
+      <div className="w-full relative h-64 md:h-96">
+        <Image
+          src="/ic.png" // Replace with your actual banner image path
+          alt="A to Zee Switchgear Careers"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-serif text-white text-center px-4 tracking-wider">
+            Introduction
           </h1>
-          <p className="text-lg text-gray-700">
-            A to Zee Switchgear Engineering is a premier manufacturer of electrical 
-            switchgear solutions, providing reliable power distribution systems 
-            for industrial and commercial applications since 1995. Our innovative 
-            products and expert engineering team deliver cutting-edge solutions 
-            tailored to meet the most demanding electrical infrastructure needs.
-          </p>
-        </section>
+        </div>
+      </div>
+
+      {/* Content Section */}
+     <div className={`w-full ${dmSans.variable}`}>
+        <div className="px-4 py-12 md:py-20 pl-10"> {/* Removed max-w and mx-auto */}
+          <div className="text-left">
+            <p className="text-3xl md:text-4xl font-semibold font-serif tracking-wide text-black mb-6 md:mb-8 leading-tight">
+              Build Your Future with A to Zee Switchgear Engineering
+            </p>
+            <p className="text-gray-700 mb-8 md:mb-10 leading-relaxed font-normal text-base md:text-lg font-serif tracking-wider">
+              At A to Zee Switchgear, we power progress through innovation in electrical engineering solutions. As a leading manufacturer of premium switchgear systems and power distribution products, we're looking for talented professionals to join our growing team.            </p>
+
+            <p className="text-gray-700 mb-8 md:mb-10 leading-relaxed font-normal text-base md:text-lg font-serif tracking-wider">
+             We offer more than just jobs – we provide opportunities to work on cutting-edge projects, develop specialized skills, and be part of a company that's shaping Pakistan's energy infrastructure. Our culture values expertise, safety, and teamwork, offering competitive benefits and continuous learning in a dynamic industry.            </p>
+            
+             <p className="text-gray-700 mb-8 md:mb-10 leading-relaxed font-normal text-base md:text-lg font-serif tracking-wider">
+          Explore how your skills can energize your career with us.
+             </p>
+         
+         
+        
+          </div>
+        </div>
       </div>
       <Footer />
     </>

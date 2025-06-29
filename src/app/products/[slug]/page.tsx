@@ -3,13 +3,16 @@ import { PortableText } from '@portabletext/react'
 import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 import { PortableTextBlock } from '@portabletext/types'
-
-// import TopBar from '@/app/Components/topbar'
 import Navbar from '@/app/Components/navbar'
 import Footer from '@/app/Components/footer'
 import ProductImageGallery from '@/app/Components/productimagegallery'
+import { DM_Sans } from 'next/font/google'
 
-// Types
+const dmsans = DM_Sans({ 
+  subsets: ['latin'],
+  weight: ['400', '500', '700'],
+});
+
 interface ProductImage {
   asset: {
     url: string
@@ -29,7 +32,6 @@ export type Product = {
   images: ProductImage[]
 }
 
-// GROQ Query
 const productQuery = `
   *[
     (_type == "lowvoltageswitchgearpanels" ||
@@ -57,11 +59,9 @@ const productQuery = `
   }
 `
 
-// ✅ Proper typing that matches Next.js internal expectations
 type PageParams = { slug: string }
 type PageSearchParams = Record<string, string | string[] | undefined>
 
-// For generateMetadata (doesn't need Promise wrapper)
 export async function generateMetadata({ params }: { params: PageParams }): Promise<Metadata> {
   const product: Product | null = await client.fetch(productQuery, { slug: params.slug })
 
@@ -92,7 +92,6 @@ export async function generateMetadata({ params }: { params: PageParams }): Prom
   }
 }
 
-// For the page component (needs to match Next.js internal types)
 export default async function Page({ params }: { params: PageParams }) {
   const product: Product | null = await client.fetch(productQuery, {
     slug: params.slug,
@@ -102,94 +101,115 @@ export default async function Page({ params }: { params: PageParams }) {
 
   return (
     <>
-      {/* <TopBar /> */}
       <Navbar />
 
-      <main className="min-h-screen bg-white px-4 md:px-6 py-16">
+      <main className={`min-h-screen bg-white px-4 md:px-6 py-16 ${dmsans.className}`}>
         <div className="max-w-6xl mx-auto space-y-16">
           <div className="grid md:grid-cols-2 gap-10 items-start">
             <ProductImageGallery images={product.images} name={product.name} />
 
             <div className="bg-[#fdfbf8] border border-gray-200 rounded-2xl shadow-lg p-6 md:p-8 space-y-6">
-              <h1 className="text-4xl font-serif font-bold text-[#6B4F3B]">
+              <h1 className={`text-4xl font-bold text-[#6B4F3B] ${dmsans.className}`}>
                 {product.name}
               </h1>
               <div className="border-t pt-4">
-                <h2 className="text-2xl font-serif font-semibold text-[#6B4F3B] mb-2">
+                <h2 className={`text-2xl font-semibold text-[#6B4F3B] mb-2 ${dmsans.className}`}>
                   Description:
                 </h2>
-                <div className="prose prose-lg max-w-none text-gray-700">
+                <div className={`prose prose-lg max-w-none text-gray-700 ${dmsans.className}`}>
                   <PortableText value={product.description} />
                 </div>
               </div>
             </div>
           </div>
 
-          <div className="bg-[#fdfbf8] border border-gray-200 rounded-2xl shadow-lg p-6 md:p-8">
-            <h2 className="text-3xl font-serif font-bold text-[#6B4F3B] mb-10 text-center">
+          <div className="bg-gradient-to-br from-[#f8f4ee] to-[#f0e6d8] border border-[#e8d8c0] rounded-2xl shadow-xl p-8 md:p-10">
+            <h2 className={`text-3xl font-bold text-[#6B4F3B] mb-8 text-center ${dmsans.className}`}>
               Product Inquiry
             </h2>
             <form
-              className="space-y-8"
-              action="https://formsubmit.co/ajax/hassan.se2007@gmail.com"
+              className="space-y-6 max-w-2xl mx-auto"
+              action="https://formsubmit.co/ajax/hr@atozee.net"
               method="POST"
             >
-              <div className="relative">
+              <input type="hidden" name="_subject" value={`New Inquiry: ${product.name}`} />
+              <input type="hidden" name="_template" value="box" />
+              
+              <div className="space-y-1">
+                <label className={`block text-gray-700 font-medium ${dmsans.className}`}>
+                  Name <span className="text-red-500">*</span>
+                </label>
                 <input
                   type="text"
                   name="name"
                   required
-                  placeholder=" "
-                  className="peer w-full border-0 border-b-2 border-gray-300 bg-transparent px-1 py-3 text-gray-800 placeholder-transparent focus:border-[#6B4F3B] focus:outline-none"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#6B4F3B] focus:border-[#6B4F3B] outline-none transition-all"
                 />
-                <label className="absolute left-1 top-3 text-gray-500 text-sm transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:top-3 peer-focus:text-sm peer-focus:text-[#6B4F3B]">
-                  Name
-                </label>
               </div>
 
-              <div className="relative">
+              <div className="space-y-1">
+                <label className={`block text-gray-700 font-medium ${dmsans.className}`}>
+                  Email <span className="text-red-500">*</span>
+                </label>
                 <input
                   type="email"
                   name="email"
                   required
-                  placeholder=" "
-                  className="peer w-full border-0 border-b-2 border-gray-300 bg-transparent px-1 py-3 text-gray-800 placeholder-transparent focus:border-[#6B4F3B] focus:outline-none"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#6B4F3B] focus:border-[#6B4F3B] outline-none transition-all"
                 />
-                <label className="absolute left-1 top-3 text-gray-500 text-sm transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:top-3 peer-focus:text-sm peer-focus:text-[#6B4F3B]">
-                  Email
-                </label>
               </div>
 
-              <div className="relative">
+              <div className="space-y-1">
+                <label className={`block text-gray-700 font-medium ${dmsans.className}`}>
+                  Company
+                </label>
+                <input
+                  type="text"
+                  name="company"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#6B4F3B] focus:border-[#6B4F3B] outline-none transition-all"
+                />
+              </div>
+
+              <div className="space-y-1">
+                <label className={`block text-gray-700 font-medium ${dmsans.className}`}>
+                  Phone
+                </label>
+                <input
+                  type="tel"
+                  name="phone"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#6B4F3B] focus:border-[#6B4F3B] outline-none transition-all"
+                />
+              </div>
+
+              <div className="space-y-1">
+                <label className={`block text-gray-700 font-medium ${dmsans.className}`}>
+                  Subject <span className="text-red-500">*</span>
+                </label>
                 <input
                   type="text"
                   name="subject"
                   required
-                  placeholder=" "
-                  className="peer w-full border-0 border-b-2 border-gray-300 bg-transparent px-1 py-3 text-gray-800 placeholder-transparent focus:border-[#6B4F3B] focus:outline-none"
+                  defaultValue={`Inquiry about ${product.name}`}
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#6B4F3B] focus:border-[#6B4F3B] outline-none transition-all"
                 />
-                <label className="absolute left-1 top-3 text-gray-500 text-sm transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:top-3 peer-focus:text-sm peer-focus:text-[#6B4F3B]">
-                  Subject
-                </label>
               </div>
 
-              <div className="relative">
+              <div className="space-y-1">
+                <label className={`block text-gray-700 font-medium ${dmsans.className}`}>
+                  Message <span className="text-red-500">*</span>
+                </label>
                 <textarea
                   name="message"
                   rows={5}
                   required
-                  placeholder=" "
-                  className="peer w-full border-0 border-b-2 border-gray-300 bg-transparent px-1 py-3 text-gray-800 placeholder-transparent focus:border-[#6B4F3B] focus:outline-none"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#6B4F3B] focus:border-[#6B4F3B] outline-none transition-all"
                 ></textarea>
-                <label className="absolute left-1 top-3 text-gray-500 text-sm transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:top-3 peer-focus:text-sm peer-focus:text-[#6B4F3B]">
-                  Message
-                </label>
               </div>
 
-              <div className="text-center">
+              <div className="pt-4 text-center">
                 <button
                   type="submit"
-                  className="inline-block bg-gradient-to-r from-[#6B4F3B] to-[#8B6E4F] text-white font-semibold text-lg tracking-wide px-10 py-3 rounded-full shadow-md hover:shadow-lg hover:from-[#5a4231] hover:to-[#755b3e] active:scale-95 transition-all duration-300 ease-in-out"
+                  className={`inline-block bg-gradient-to-r from-[#6B4F3B] to-[#8B6E4F] text-white font-semibold text-lg tracking-wide px-10 py-4 rounded-full shadow-lg hover:shadow-xl hover:from-[#5a4231] hover:to-[#755b3e] active:scale-[0.98] transition-all duration-300 ease-in-out ${dmsans.className}`}
                 >
                   Submit Inquiry
                 </button>
