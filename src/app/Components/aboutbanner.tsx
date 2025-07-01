@@ -24,7 +24,7 @@ const BannerSection = () => {
       Powering Progress Through Innovation
     </h1>
     <p className="text-white font-light tracking-wider text-sm sm:text-base md:text-lg mb-8 leading-relaxed">
-      For over a decade, we've been delivering cutting-edge electrical solutions with uncompromising quality and safety standards to industries worldwide.
+      For over a decade, we&apos; ve been delivering cutting-edge electrical solutions with uncompromising quality and safety standards to industries worldwide.
     </p>
     <div className="mt-8"> {/* Added spacing div */}
       <button className="text-black font-semibold px-6 py-3 bg-white hover:bg-gray-100 transition-all duration-300 uppercase tracking-wider rounded-sm border border-gray-900 flex items-center gap-2 group w-fit">

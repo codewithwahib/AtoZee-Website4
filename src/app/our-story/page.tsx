@@ -27,15 +27,11 @@ const CEOMessage = () => {
                     {/* Text Content - Left Side */}
                     <div className="lg:w-1/2 pl-0">
                         <div className="px-4 sm:px-6">
-                            <h1 className="text-4xl font-mono font-bold text-gray-900 pb-6 border-b pl-6 border-gray-200 tracking-widest">
+                            <h1 className={`text-4xl font-bold text-gray-900 pb-6 border-b pl-6 border-gray-200 tracking-widest ${dmsans.className}`}>
                                 Our Story
                             </h1>
 
                             <div className="space-y-6 mt-8 text-gray-800">
-                                {/* <h2 className="text-xl pt-0 font-bold text-gray-900 mb-6 pl-6 tracking-widest">
-                                    Welcome to A to Zee Switchgear Engineering!
-                                </h2> */}
-
                                 <div className="space-y-5 pl-6">
                                     <p className="text-lg leading-relaxed text-gray-600 font-roboto tracking-wider pt-2">
                                         Electro technical Solutions under one roof A to Zee systems supply,
@@ -65,10 +61,10 @@ const CEOMessage = () => {
                                 </div>
 
                                 <div className="mt-10 pt-6 border-t border-gray-200">
-                                    <h3 className="text-3xl font-bold text-gray-900 pl-6 tracking-widest font-playfair">
+                                    <h3 className={`text-3xl font-bold text-gray-900 pl-6 tracking-widest ${dmsans.className}`}>
                                         A to Zee Switchgear Engineering
                                     </h3>
-                                    <p className="text-lg font-semibold text-gray-600 mt-2 pl-7 pt-2 tracking-widest font-montserrat">
+                                    <p className={`text-lg font-semibold text-gray-600 mt-2 pl-7 pt-2 tracking-widest ${dmsans.className}`}>
                                         (SMC) Pvt. Ltd.
                                     </p>
                                 </div>

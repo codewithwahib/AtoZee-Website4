@@ -5,6 +5,8 @@ import Navbar from '@/app/Components/navbar';
 import Footer from '@/app/Components/footer';
 import ContactBar from '@/app/Components/topbar';
 import { Lato } from 'next/font/google';
+import ScrollToTopButton from '../Components/scroll';
+
 
 const lato = Lato({
   subsets: ['latin'],
@@ -78,20 +80,20 @@ export default function CareerIntro() {
 
       {/* Textile Mills----------------------------------------------------------------------------------------------------------------------------------------------------------------- */}
       
-      <div className="w-full relative h-64 md:h-96">
-        <Image
-          src="/02.png" // Replace with your actual banner image path
-          alt="A to Zee Switchgear Careers"
-          fill
-          className="object-cover"
-          priority
-        />
-        <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
-          <h1 className={`text-4xl md:text-6xl lg:text-7xl font-bold text-white text-center px-4 tracking-wider ${dmSans.className}`}>
-  Textile Mills
-</h1>
-        </div>
-      </div>
+     <div className="w-full relative h-64 md:h-96">
+  <Image
+    src="/02.png" // Replace with your actual banner image path
+    alt="A to Zee Switchgear Careers"
+    fill
+    className="object-cover"
+    priority
+  />
+  <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
+    <h1 className={`text-4xl md:text-6xl lg:text-7xl font-bold text-white text-center px-4 tracking-wider ${dmSans.className}`}>
+      Textile Mills
+    </h1>
+  </div>
+</div>
 
 <div className={`w-full ${dmSans.variable}`}>
   <div className="px-4 py-12 md:py-20 pl-10">
@@ -112,187 +114,224 @@ export default function CareerIntro() {
   <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 max-w-6xl mx-auto">
     {/* Logo 1 */}
     <div className="bg-white aspect-square w-full p-4 rounded-lg shadow-sm flex items-center justify-center transition-all hover:shadow-md">
-      <img 
+      <Image 
         src="/t1.png" 
-        alt="Commercial Developer Logo" 
+        alt="Textile Mill Logo" 
+        width={200}
+        height={200}
         className="w-full h-full p-4 object-contain"
       />
     </div>
     
     {/* Logo 2 */}
     <div className="bg-white aspect-square w-full p-4 rounded-lg shadow-sm flex items-center justify-center transition-all hover:shadow-md">
-      <img 
+      <Image 
         src="/t2.png" 
-        alt="Retail Chain Logo" 
+        alt="Textile Mill Logo" 
+        width={200}
+        height={200}
         className="w-full h-full p-4 object-contain"
       />
     </div>
     
     {/* Logo 3 */}
     <div className="bg-white aspect-square w-full p-4 rounded-lg shadow-sm flex items-center justify-center transition-all hover:shadow-md">
-      <img 
+      <Image 
         src="/t3.png" 
-        alt="Property Group Logo" 
+        alt="Textile Mill Logo" 
+        width={200}
+        height={200}
         className="w-full h-full p-4 object-contain"
       />
     </div>
     
     {/* Logo 4 */}
     <div className="bg-white aspect-square w-full p-4 rounded-lg shadow-sm flex items-center justify-center transition-all hover:shadow-md">
-      <img 
+      <Image 
         src="/t4.png" 
-        alt="Office REIT Logo" 
+        alt="Textile Mill Logo" 
+        width={200}
+        height={200}
         className="w-full h-full p-4 object-contain"
       />
     </div>
     
     {/* Logo 5 */}
     <div className="bg-white aspect-square w-full p-4 rounded-lg shadow-sm flex items-center justify-center transition-all hover:shadow-md">
-      <img 
+      <Image 
         src="/t5.png" 
-        alt="Mixed-Use Developer Logo" 
+        alt="Textile Mill Logo" 
+        width={200}
+        height={200}
         className="w-full h-full p-4 object-contain"
       />
     </div>
     <div className="bg-white aspect-square w-full p-4 rounded-lg shadow-sm flex items-center justify-center transition-all hover:shadow-md">
-      <img 
+      <Image 
         src="/t6.png" 
-        alt="Mixed-Use Developer Logo" 
+        alt="Textile Mill Logo" 
+        width={200}
+        height={200}
         className="w-full h-full p-4 object-contain"
       />
     </div>
     <div className="bg-white aspect-square w-full p-4 rounded-lg shadow-sm flex items-center justify-center transition-all hover:shadow-md">
-      <img 
+      <Image 
         src="/t7.png" 
-        alt="Mixed-Use Developer Logo" 
+        alt="Textile Mill Logo" 
+        width={200}
+        height={200}
         className="w-full h-full p-4 object-contain"
       />
     </div>
     <div className="bg-white aspect-square w-full p-4 rounded-lg shadow-sm flex items-center justify-center transition-all hover:shadow-md">
-      <img 
+      <Image 
         src="/t8.png" 
-        alt="Mixed-Use Developer Logo" 
+        alt="Textile Mill Logo" 
+        width={200}
+        height={200}
         className="w-full h-full p-4 object-contain"
       />
     </div>
     <div className="bg-white aspect-square w-full p-4 rounded-lg shadow-sm flex items-center justify-center transition-all hover:shadow-md">
-      <img 
+      <Image 
         src="/t9.png" 
-        alt="Mixed-Use Developer Logo" 
+        alt="Textile Mill Logo" 
+        width={200}
+        height={200}
         className="w-full h-full p-4 object-contain"
       />
     </div>
     <div className="bg-white aspect-square w-full p-4 rounded-lg shadow-sm flex items-center justify-center transition-all hover:shadow-md">
-      <img 
+      <Image 
         src="/t10.png" 
-        alt="Mixed-Use Developer Logo" 
+        alt="Textile Mill Logo" 
+        width={200}
+        height={200}
         className="w-full h-full p-4 object-contain"
       />
     </div>
   </div>
 </div>
+{/* Hospitals----------------------------------------------------------------------------------------------------------------------------------------------------------- */}
+<div className="w-full relative h-64 md:h-96">
+  <Image
+    src="/hospitals.png" // Replace with your actual banner image path
+    alt="A to Zee Switchgear Careers"
+    fill
+    className="object-cover"
+    priority
+  />
+  <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
+    <h1 className={`text-4xl md:text-6xl lg:text-7xl font-bold text-white text-center px-4 tracking-wider ${dmSans.className}`}>
+      Hospitals
+    </h1>
+  </div>
+</div>
 
-      {/* Hospitals----------------------------------------------------------------------------------------------------------------------------------------------------------- */}
- <div className="w-full relative h-64 md:h-96">
-        <Image
-          src="/hospitals.png" // Replace with your actual banner image path
-          alt="A to Zee Switchgear Careers"
-          fill
-          className="object-cover"
-          priority
-        />
-        <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
-          <h1 className={`text-4xl md:text-6xl lg:text-7xl font-bold text-white text-center px-4 tracking-wider ${dmSans.className}`}>
- Hospitals
-</h1>
-        </div>
-      </div>
+<div className={`w-full ${dmSans.variable}`}>
+  <div className="px-4 py-12 md:py-20 pl-10">
+    <div className="text-left">
+      <p className={`text-3xl md:text-4xl ${dmSans.className} font-semibold tracking-wide text-black mb-6 md:mb-8 leading-tight`}>
+        Our Esteemed Clients – Hospitals & Healthcare Facilities
+      </p>
+      <p className={`text-gray-700 mb-8 md:mb-10 leading-relaxed font-normal text-base md:text-xl tracking-wider ${lato.variable} font-sans`}>
+        We take pride in providing reliable and high-performance switchgear solutions to hospitals and healthcare facilities worldwide. Our advanced electrical systems ensure uninterrupted power supply, critical for patient care, life-saving equipment, and smooth hospital operations. Trusted by leading medical institutions, we deliver safety, efficiency, and innovation to keep healthcare environments running seamlessly
+      </p>
+    </div>
+  </div>
+</div>
 
-      <div className={`w-full ${dmSans.variable}`}>
-        <div className="px-4 py-12 md:py-20 pl-10">
-          <div className="text-left">
-            <p className={`text-3xl md:text-4xl ${dmSans.className} font-semibold tracking-wide text-black mb-6 md:mb-8 leading-tight`}>
- Our Esteemed Clients – Hospitals & Healthcare Facilities</p>
-            <p className={`text-gray-700 mb-8 md:mb-10 leading-relaxed font-normal text-base md:text-xl tracking-wider ${lato.variable} font-sans`}>
-          We take pride in providing reliable and high-performance switchgear solutions to hospitals and healthcare facilities worldwide. Our advanced electrical systems ensure uninterrupted power supply, critical for patient care, life-saving equipment, and smooth hospital operations. Trusted by leading medical institutions, we deliver safety, efficiency, and innovation to keep healthcare environments running seamlessly
-            </p>
-          </div>
-        </div>
-      </div>
-
-      {/* Logo Showcase Section */}
+{/* Logo Showcase Section */}
 <div className="w-full bg-white py-10 px-2 pt-0 md:px-8">
-  
   <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 max-w-6xl mx-auto">
     {/* Logo 1 */}
     <div className="bg-white aspect-square w-full p-4 rounded-lg shadow-sm flex items-center justify-center transition-all hover:shadow-md">
-      <img 
+      <Image 
         src="/h1.png" 
-        alt="Commercial Developer Logo" 
+        alt="Hospital Logo" 
+        width={200}
+        height={200}
         className="w-full h-full p-4 object-contain"
       />
     </div>
     
     {/* Logo 2 */}
     <div className="bg-white aspect-square w-full p-4 rounded-lg shadow-sm flex items-center justify-center transition-all hover:shadow-md">
-      <img 
+      <Image 
         src="/h2.png" 
-        alt="Retail Chain Logo" 
+        alt="Hospital Logo" 
+        width={200}
+        height={200}
         className="w-full h-full p-4 object-contain"
       />
     </div>
     
     {/* Logo 3 */}
     <div className="bg-white aspect-square w-full p-4 rounded-lg shadow-sm flex items-center justify-center transition-all hover:shadow-md">
-      <img 
+      <Image 
         src="/h3.png" 
-        alt="Property Group Logo" 
+        alt="Hospital Logo" 
+        width={200}
+        height={200}
         className="w-full h-full p-4 object-contain"
       />
     </div>
     
     {/* Logo 4 */}
     <div className="bg-white aspect-square w-full p-4 rounded-lg shadow-sm flex items-center justify-center transition-all hover:shadow-md">
-      <img 
+      <Image 
         src="/h4.png" 
-        alt="Office REIT Logo" 
+        alt="Hospital Logo" 
+        width={200}
+        height={200}
         className="w-full h-full p-4 object-contain"
       />
     </div>
     
     {/* Logo 5 */}
     <div className="bg-white aspect-square w-full p-4 rounded-lg shadow-sm flex items-center justify-center transition-all hover:shadow-md">
-      <img 
+      <Image 
         src="/h5.png" 
-        alt="Mixed-Use Developer Logo" 
+        alt="Hospital Logo" 
+        width={200}
+        height={200}
         className="w-full h-full p-4 object-contain"
       />
     </div>
     <div className="bg-white aspect-square w-full p-4 rounded-lg shadow-sm flex items-center justify-center transition-all hover:shadow-md">
-      <img 
+      <Image 
         src="/h6.png" 
-        alt="Mixed-Use Developer Logo" 
+        alt="Hospital Logo" 
+        width={200}
+        height={200}
         className="w-full h-full p-4 object-contain"
       />
     </div>
     <div className="bg-white aspect-square w-full p-4 rounded-lg shadow-sm flex items-center justify-center transition-all hover:shadow-md">
-      <img 
+      <Image 
         src="/h7.png" 
-        alt="Mixed-Use Developer Logo" 
+        alt="Hospital Logo" 
+        width={200}
+        height={200}
         className="w-full h-full p-4 object-contain"
       />
     </div>
     <div className="bg-white aspect-square w-full p-4 rounded-lg shadow-sm flex items-center justify-center transition-all hover:shadow-md">
-      <img 
+      <Image 
         src="/h8.png" 
-        alt="Mixed-Use Developer Logo" 
+        alt="Hospital Logo" 
+        width={200}
+        height={200}
         className="w-full h-full p-4 object-contain"
       />
     </div>
     <div className="bg-white aspect-square w-full p-4 rounded-lg shadow-sm flex items-center justify-center transition-all hover:shadow-md">
-      <img 
+      <Image 
         src="/h9.png" 
-        alt="Mixed-Use Developer Logo" 
+        alt="Hospital Logo" 
+        width={200}
+        height={200}
         className="w-full h-full p-4 object-contain"
       />
     </div>
@@ -300,21 +339,20 @@ export default function CareerIntro() {
 </div>
 
 {/* Banks ----------------------------------------------------------------------------------------------------------------------------------------------------------------------*/}
-
-       <div className="w-full relative h-64 md:h-96">
-        <Image
-          src="/bank.png" // Replace with your actual banner image path
-          alt="A to Zee Switchgear Careers"
-          fill
-          className="object-cover"
-          priority
-        />
-        <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
-          <h1 className={`text-4xl md:text-6xl lg:text-7xl font-bold text-white text-center px-4 tracking-wider ${dmSans.className}`}>
- Banks
-</h1>
-        </div>
-      </div>
+<div className="w-full relative h-64 md:h-96">
+  <Image
+    src="/bank.png"
+    alt="A to Zee Switchgear Careers"
+    fill
+    className="object-cover"
+    priority
+  />
+  <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
+    <h1 className={`text-4xl md:text-6xl lg:text-7xl font-bold text-white text-center px-4 tracking-wider ${dmSans.className}`}>
+      Banks
+    </h1>
+  </div>
+</div>
 
 <div className={`w-full ${dmSans.variable}`}>
   <div className="px-4 py-12 md:py-20 pl-10">
@@ -329,80 +367,96 @@ export default function CareerIntro() {
   </div>
 </div>
 
-
-     {/* Logo Showcase Section */}
+{/* Logo Showcase Section */}
 <div className="w-full bg-white py-10 px-2 pt-0 md:px-8">
-  
   <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 max-w-6xl mx-auto">
     {/* Logo 1 */}
     <div className="bg-white aspect-square w-full p-4 rounded-lg shadow-sm flex items-center justify-center transition-all hover:shadow-md">
-      <img 
+      <Image 
         src="/b1.png" 
-        alt="Commercial Developer Logo" 
+        alt="Bank Logo" 
+        width={200}
+        height={200}
         className="w-full h-full p-4 object-contain"
       />
     </div>
     
     {/* Logo 2 */}
     <div className="bg-white aspect-square w-full p-4 rounded-lg shadow-sm flex items-center justify-center transition-all hover:shadow-md">
-      <img 
+      <Image 
         src="/b2.png" 
-        alt="Retail Chain Logo" 
+        alt="Bank Logo" 
+        width={200}
+        height={200}
         className="w-full h-full p-4 object-contain"
       />
     </div>
     
     {/* Logo 3 */}
     <div className="bg-white aspect-square w-full p-4 rounded-lg shadow-sm flex items-center justify-center transition-all hover:shadow-md">
-      <img 
+      <Image 
         src="/b3.png" 
-        alt="Property Group Logo" 
+        alt="Bank Logo" 
+        width={200}
+        height={200}
         className="w-full h-full p-4 object-contain"
       />
     </div>
     
     {/* Logo 4 */}
     <div className="bg-white aspect-square w-full p-4 rounded-lg shadow-sm flex items-center justify-center transition-all hover:shadow-md">
-      <img 
+      <Image 
         src="/b4.png" 
-        alt="Office REIT Logo" 
+        alt="Bank Logo" 
+        width={200}
+        height={200}
         className="w-full h-full p-4 object-contain"
       />
     </div>
     
     {/* Logo 5 */}
     <div className="bg-white aspect-square w-full p-4 rounded-lg shadow-sm flex items-center justify-center transition-all hover:shadow-md">
-      <img 
+      <Image 
         src="/b5.png" 
-        alt="Mixed-Use Developer Logo" 
+        alt="Bank Logo" 
+        width={200}
+        height={200}
         className="w-full h-full p-4 object-contain"
       />
     </div>
     <div className="bg-white aspect-square w-full p-4 rounded-lg shadow-sm flex items-center justify-center transition-all hover:shadow-md">
-      <img 
+      <Image 
         src="/b6.png" 
-        alt="Mixed-Use Developer Logo" 
+        alt="Bank Logo" 
+        width={200}
+        height={200}
         className="w-full h-full p-4 object-contain"
       />
     </div>
     <div className="bg-white aspect-square w-full p-4 rounded-lg shadow-sm flex items-center justify-center transition-all hover:shadow-md">
-      <img 
+      <Image 
         src="/b7.png" 
-        alt="Mixed-Use Developer Logo" 
+        alt="Bank Logo" 
+        width={200}
+        height={200}
         className="w-full h-full p-4 object-contain"
       />
     </div>
     <div className="bg-white aspect-square w-full p-4 rounded-lg shadow-sm flex items-center justify-center transition-all hover:shadow-md">
-      <img 
+      <Image 
         src="/b8.png" 
-        alt="Mixed-Use Developer Logo" 
+        alt="Bank Logo" 
+        width={200}
+        height={200}
         className="w-full h-full p-4 object-contain"
       />
     </div>
     <div className="bg-white aspect-square w-full p-4 rounded-lg shadow-sm flex items-center justify-center transition-all hover:shadow-md">
-      <img 
+      <Image 
         src="/b9.png" 
-        alt="Mixed-Use Developer Logo" 
+        alt="Bank Logo" 
+        width={200}
+        height={200}
         className="w-full h-full p-4 object-contain"
       />
     </div>
@@ -412,21 +466,21 @@ export default function CareerIntro() {
 
 
 
- {/* Pharma ------------------------------------------------------------------------------------------------------------------------------*/}
-       <div className="w-full relative h-64 md:h-96">
-        <Image
-          src="/pc2.png" // Replace with your actual banner image path
-          alt="A to Zee Switchgear Careers"
-          fill
-          className="object-cover"
-          priority
-        />
-        <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
-          <h1 className={`text-4xl md:text-6xl lg:text-7xl font-bold text-white text-center px-4 tracking-wider ${dmSans.className}`}>
- Pharmaceutical Companies
-</h1>
-        </div>
-      </div>
+{/* Pharma ------------------------------------------------------------------------------------------------------------------------------*/}
+<div className="w-full relative h-64 md:h-96">
+  <Image
+    src="/pc2.png"
+    alt="A to Zee Switchgear Careers"
+    fill
+    className="object-cover"
+    priority
+  />
+  <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
+    <h1 className={`text-4xl md:text-6xl lg:text-7xl font-bold text-white text-center px-4 tracking-wider ${dmSans.className}`}>
+      Pharmaceutical Companies
+    </h1>
+  </div>
+</div>
 
 <div className={`w-full ${dmSans.variable}`}>
   <div className="px-4 py-12 md:py-20 pl-10">
@@ -441,116 +495,136 @@ export default function CareerIntro() {
   </div>
 </div>
 
-     {/* Logo Showcase Section */}
+{/* Logo Showcase Section */}
 <div className="w-full bg-white py-10 px-2 pt-0 md:px-8">
-  
   <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 max-w-6xl mx-auto">
     {/* Logo 1 */}
     <div className="bg-white aspect-square w-full p-4 rounded-lg shadow-sm flex items-center justify-center transition-all hover:shadow-md">
-      <img 
+      <Image 
         src="/p1.png" 
-        alt="Commercial Developer Logo" 
+        alt="Pharmaceutical Company Logo" 
+        width={200}
+        height={200}
         className="w-full h-full p-4 object-contain"
       />
     </div>
     
     {/* Logo 2 */}
     <div className="bg-white aspect-square w-full p-4 rounded-lg shadow-sm flex items-center justify-center transition-all hover:shadow-md">
-      <img 
+      <Image 
         src="/p2.png" 
-        alt="Retail Chain Logo" 
+        alt="Pharmaceutical Company Logo" 
+        width={200}
+        height={200}
         className="w-full h-full p-4 object-contain"
       />
     </div>
     
     {/* Logo 3 */}
     <div className="bg-white aspect-square w-full p-4 rounded-lg shadow-sm flex items-center justify-center transition-all hover:shadow-md">
-      <img 
+      <Image 
         src="/p3.png" 
-        alt="Property Group Logo" 
+        alt="Pharmaceutical Company Logo" 
+        width={200}
+        height={200}
         className="w-full h-full p-4 object-contain"
       />
     </div>
     
     {/* Logo 4 */}
     <div className="bg-white aspect-square w-full p-4 rounded-lg shadow-sm flex items-center justify-center transition-all hover:shadow-md">
-      <img 
+      <Image 
         src="/p4.png" 
-        alt="Office REIT Logo" 
+        alt="Pharmaceutical Company Logo" 
+        width={200}
+        height={200}
         className="w-full h-full p-4 object-contain"
       />
     </div>
     
     {/* Logo 5 */}
     <div className="bg-white aspect-square w-full p-4 rounded-lg shadow-sm flex items-center justify-center transition-all hover:shadow-md">
-      <img 
+      <Image 
         src="/p5.png" 
-        alt="Mixed-Use Developer Logo" 
+        alt="Pharmaceutical Company Logo" 
+        width={200}
+        height={200}
         className="w-full h-full p-4 object-contain"
       />
     </div>
     <div className="bg-white aspect-square w-full p-4 rounded-lg shadow-sm flex items-center justify-center transition-all hover:shadow-md">
-      <img 
+      <Image 
         src="/p6.png" 
-        alt="Mixed-Use Developer Logo" 
+        alt="Pharmaceutical Company Logo" 
+        width={200}
+        height={200}
         className="w-full h-full p-4 object-contain"
       />
     </div>
     <div className="bg-white aspect-square w-full p-4 rounded-lg shadow-sm flex items-center justify-center transition-all hover:shadow-md">
-      <img 
+      <Image 
         src="/p7.png" 
-        alt="Mixed-Use Developer Logo" 
+        alt="Pharmaceutical Company Logo" 
+        width={200}
+        height={200}
         className="w-full h-full p-4 object-contain"
       />
     </div>
     <div className="bg-white aspect-square w-full p-4 rounded-lg shadow-sm flex items-center justify-center transition-all hover:shadow-md">
-      <img 
+      <Image 
         src="/p8.png" 
-        alt="Mixed-Use Developer Logo" 
+        alt="Pharmaceutical Company Logo" 
+        width={200}
+        height={200}
         className="w-full h-full p-4 object-contain"
       />
     </div>
     <div className="bg-white aspect-square w-full p-4 rounded-lg shadow-sm flex items-center justify-center transition-all hover:shadow-md">
-      <img 
+      <Image 
         src="/p9.png" 
-        alt="Mixed-Use Developer Logo" 
+        alt="Pharmaceutical Company Logo" 
+        width={200}
+        height={200}
         className="w-full h-full p-4 object-contain"
       />
     </div>
     <div className="bg-white aspect-square w-full p-4 rounded-lg shadow-sm flex items-center justify-center transition-all hover:shadow-md">
-      <img 
+      <Image 
         src="/p10.png" 
-        alt="Mixed-Use Developer Logo" 
+        alt="Pharmaceutical Company Logo" 
+        width={200}
+        height={200}
         className="w-full h-full p-4 object-contain"
       />
     </div>
     <div className="bg-white aspect-square w-full p-4 rounded-lg shadow-sm flex items-center justify-center transition-all hover:shadow-md">
-      <img 
+      <Image 
         src="/p11.png" 
-        alt="Mixed-Use Developer Logo" 
+        alt="Pharmaceutical Company Logo" 
+        width={200}
+        height={200}
         className="w-full h-full p-4 object-contain"
       />
     </div>
   </div>
 </div>
 
-
 {/* Steel ---------------------------------------------------------------------------------------------------------------------------------------------------------------*/}
+<div className="w-full relative h-64 md:h-96">
+  <Image
+    src="/cs.png"
+    alt="A to Zee Switchgear Careers"
+    fill
+    className="object-cover"
+    priority
+  />
+  <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
+    <h1 className={`text-4xl md:text-6xl lg:text-7xl font-bold text-white text-center px-4 tracking-wider ${dmSans.className}`}>
+      Cement & Steel Industries
+    </h1>
+  </div>
+</div>
 
-       <div className="w-full relative h-64 md:h-96">
-        <Image
-          src="/cs.png" // Replace with your actual banner image path
-          alt="A to Zee Switchgear Careers"
-          fill
-          className="object-cover"
-          priority
-        />
-        <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
-          <h1 className={`text-4xl md:text-6xl lg:text-7xl font-bold text-white text-center px-4 tracking-wider ${dmSans.className}`}>
- Cement & Steel Industries
-</h1>
-        </div>
-      </div>
 <div className={`w-full ${dmSans.variable}`}>
   <div className="px-4 py-12 md:py-20 pl-10">
     <div className="text-left">
@@ -564,66 +638,78 @@ export default function CareerIntro() {
   </div>
 </div>
 
-
-     {/* Logo Showcase Section */}
+{/* Logo Showcase Section */}
 <div className="w-full bg-white py-10 px-2 pt-0 md:px-8">
-  
   <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 max-w-6xl mx-auto">
     {/* Logo 1 */}
     <div className="bg-white aspect-square w-full p-4 rounded-lg shadow-sm flex items-center justify-center transition-all hover:shadow-md">
-      <img 
+      <Image 
         src="/i.png" 
-        alt="Commercial Developer Logo" 
+        alt="Cement & Steel Industry Logo" 
+        width={200}
+        height={200}
         className="w-full h-full p-4 object-contain"
       />
     </div>
     
     {/* Logo 2 */}
     <div className="bg-white aspect-square w-full p-4 rounded-lg shadow-sm flex items-center justify-center transition-all hover:shadow-md">
-      <img 
+      <Image 
         src="/i2.png" 
-        alt="Retail Chain Logo" 
+        alt="Cement & Steel Industry Logo" 
+        width={200}
+        height={200}
         className="w-full h-full p-4 object-contain"
       />
     </div>
     
     {/* Logo 3 */}
     <div className="bg-white aspect-square w-full p-4 rounded-lg shadow-sm flex items-center justify-center transition-all hover:shadow-md">
-      <img 
+      <Image 
         src="/i3.png" 
-        alt="Property Group Logo" 
+        alt="Cement & Steel Industry Logo" 
+        width={200}
+        height={200}
         className="w-full h-full p-4 object-contain"
       />
     </div>
     
     {/* Logo 4 */}
     <div className="bg-white aspect-square w-full p-4 rounded-lg shadow-sm flex items-center justify-center transition-all hover:shadow-md">
-      <img 
+      <Image 
         src="/i4.png" 
-        alt="Office REIT Logo" 
+        alt="Cement & Steel Industry Logo" 
+        width={200}
+        height={200}
         className="w-full h-full p-4 object-contain"
       />
     </div>
     
     {/* Logo 5 */}
     <div className="bg-white aspect-square w-full p-4 rounded-lg shadow-sm flex items-center justify-center transition-all hover:shadow-md">
-      <img 
+      <Image 
         src="/i5.png" 
-        alt="Mixed-Use Developer Logo" 
+        alt="Cement & Steel Industry Logo" 
+        width={200}
+        height={200}
         className="w-full h-full p-4 object-contain"
       />
     </div>
     <div className="bg-white aspect-square w-full p-4 rounded-lg shadow-sm flex items-center justify-center transition-all hover:shadow-md">
-      <img 
+      <Image 
         src="/i6.png" 
-        alt="Mixed-Use Developer Logo" 
+        alt="Cement & Steel Industry Logo" 
+        width={200}
+        height={200}
         className="w-full h-full p-4 object-contain"
       />
     </div>
     <div className="bg-white aspect-square w-full p-4 rounded-lg shadow-sm flex items-center justify-center transition-all hover:shadow-md">
-      <img 
+      <Image 
         src="/i7.jpeg" 
-        alt="Mixed-Use Developer Logo" 
+        alt="Cement & Steel Industry Logo" 
+        width={200}
+        height={200}
         className="w-full h-full p-4 object-contain"
       />
     </div>
@@ -631,21 +717,21 @@ export default function CareerIntro() {
 </div>
 
 {/* Automobiles ---------------------------------------------------------------------------------------------------------------------------*/}
+<div className="w-full relative h-64 md:h-96">
+  <Image
+    src="/am.png"
+    alt="A to Zee Switchgear Careers"
+    fill
+    className="object-cover"
+    priority
+  />
+  <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
+    <h1 className={`text-4xl md:text-6xl lg:text-7xl font-bold text-white text-center px-4 tracking-wider ${dmSans.className}`}>
+      Automobile Industries
+    </h1>
+  </div>
+</div>
 
-       <div className="w-full relative h-64 md:h-96">
-        <Image
-          src="/am.png" // Replace with your actual banner image path
-          alt="A to Zee Switchgear Careers"
-          fill
-          className="object-cover"
-          priority
-        />
-        <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
-          <h1 className={`text-4xl md:text-6xl lg:text-7xl font-bold text-white text-center px-4 tracking-wider ${dmSans.className}`}>
- Automobile Industries
-</h1>
-        </div>
-      </div>
 <div className={`w-full ${dmSans.variable}`}>
   <div className="px-4 py-12 md:py-20 pl-10">
     <div className="text-left">
@@ -659,82 +745,90 @@ export default function CareerIntro() {
   </div>
 </div>
 
-
-    {/* Logo Showcase Section */}
+{/* Logo Showcase Section */}
 <div className="w-full bg-white py-10 px-2 pt-0 md:px-8">
-  
   <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 max-w-6xl mx-auto">
     {/* Logo 1 */}
     <div className="bg-white aspect-square w-full p-4 rounded-lg shadow-sm flex items-center justify-center transition-all hover:shadow-md">
-      <img 
+      <Image 
         src="/a1.png" 
-        alt="Commercial Developer Logo" 
+        alt="Automobile Industry Logo" 
+        width={200}
+        height={200}
         className="w-full h-full p-4 object-contain"
       />
     </div>
     
     {/* Logo 2 */}
     <div className="bg-white aspect-square w-full p-4 rounded-lg shadow-sm flex items-center justify-center transition-all hover:shadow-md">
-      <img 
+      <Image 
         src="/a2.png" 
-        alt="Retail Chain Logo" 
+        alt="Automobile Industry Logo" 
+        width={200}
+        height={200}
         className="w-full h-full p-4 object-contain"
       />
     </div>
     
     {/* Logo 3 */}
     <div className="bg-white aspect-square w-full p-4 rounded-lg shadow-sm flex items-center justify-center transition-all hover:shadow-md">
-      <img 
+      <Image 
         src="/a3.png" 
-        alt="Property Group Logo" 
+        alt="Automobile Industry Logo" 
+        width={200}
+        height={200}
         className="w-full h-full p-4 object-contain"
       />
     </div>
     
     {/* Logo 4 */}
     <div className="bg-white aspect-square w-full p-4 rounded-lg shadow-sm flex items-center justify-center transition-all hover:shadow-md">
-      <img 
+      <Image 
         src="/a4.png" 
-        alt="Office REIT Logo" 
+        alt="Automobile Industry Logo" 
+        width={200}
+        height={200}
         className="w-full h-full p-4 object-contain"
       />
     </div>
     
     {/* Logo 5 */}
     <div className="bg-white aspect-square w-full p-4 rounded-lg shadow-sm flex items-center justify-center transition-all hover:shadow-md">
-      <img 
+      <Image 
         src="/a5.png" 
-        alt="Mixed-Use Developer Logo" 
+        alt="Automobile Industry Logo" 
+        width={200}
+        height={200}
         className="w-full h-full p-4 object-contain"
       />
     </div>
     <div className="bg-white aspect-square w-full p-4 rounded-lg shadow-sm flex items-center justify-center transition-all hover:shadow-md">
-      <img 
+      <Image 
         src="/a6.png" 
-        alt="Mixed-Use Developer Logo" 
+        alt="Automobile Industry Logo" 
+        width={200}
+        height={200}
         className="w-full h-full p-4 object-contain"
       />
     </div>
   </div>
 </div>
 
-
 {/* Food --------------------------------------------------------------------------------------------------------------------------------------------------------------*/}
-
-       <div className="w-full relative h-64 md:h-96">
-        <Image
-          src="/fi3.png" // Replace with your actual banner image path
-          alt="A to Zee Switchgear Careers"
-          fill
-          className="object-cover"
-          priority
-        />
-        <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
-          <h1 className={`text-4xl md:text-6xl lg:text-7xl font-bold text-white text-center px-4 tracking-wider ${dmSans.className}`}>
- Food Industries
-</h1>
-        </div>
-      </div>
+<div className="w-full relative h-64 md:h-96">
+  <Image
+    src="/fi3.png"
+    alt="A to Zee Switchgear Careers"
+    fill
+    className="object-cover"
+    priority
+  />
+  <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
+    <h1 className={`text-4xl md:text-6xl lg:text-7xl font-bold text-white text-center px-4 tracking-wider ${dmSans.className}`}>
+      Food Industries
+    </h1>
+  </div>
+</div>
 
 <div className={`w-full ${dmSans.variable}`}>
   <div className="px-4 py-12 md:py-20 pl-10">
@@ -749,96 +843,114 @@ export default function CareerIntro() {
   </div>
 </div>
 
-
-
-
- {/* Logo Showcase Section */}
+{/* Logo Showcase Section */}
 <div className="w-full bg-white py-10 px-2 pt-0 md:px-8">
-  
   <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 max-w-6xl mx-auto">
     {/* Logo 1 */}
     <div className="bg-white aspect-square w-full p-4 rounded-lg shadow-sm flex items-center justify-center transition-all hover:shadow-md">
-      <img 
+      <Image 
         src="/f1.png" 
-        alt="Commercial Developer Logo" 
+        alt="Food Industry Logo" 
+        width={200}
+        height={200}
         className="w-full h-full p-4 object-contain"
       />
     </div>
     
     {/* Logo 2 */}
     <div className="bg-white aspect-square w-full p-4 rounded-lg shadow-sm flex items-center justify-center transition-all hover:shadow-md">
-      <img 
+      <Image 
         src="/f2.png" 
-        alt="Retail Chain Logo" 
+        alt="Food Industry Logo" 
+        width={200}
+        height={200}
         className="w-full h-full p-4 object-contain"
       />
     </div>
     
     {/* Logo 3 */}
     <div className="bg-white aspect-square w-full p-4 rounded-lg shadow-sm flex items-center justify-center transition-all hover:shadow-md">
-      <img 
+      <Image 
         src="/f3.png" 
-        alt="Property Group Logo" 
+        alt="Food Industry Logo" 
+        width={200}
+        height={200}
         className="w-full h-full p-4 object-contain"
       />
     </div>
     
     {/* Logo 4 */}
     <div className="bg-white aspect-square w-full p-4 rounded-lg shadow-sm flex items-center justify-center transition-all hover:shadow-md">
-      <img 
+      <Image 
         src="/f4.png" 
-        alt="Office REIT Logo" 
+        alt="Food Industry Logo" 
+        width={200}
+        height={200}
         className="w-full h-full p-4 object-contain"
       />
     </div>
     
     {/* Logo 5 */}
     <div className="bg-white aspect-square w-full p-4 rounded-lg shadow-sm flex items-center justify-center transition-all hover:shadow-md">
-      <img 
+      <Image 
         src="/f5.png" 
-        alt="Mixed-Use Developer Logo" 
+        alt="Food Industry Logo" 
+        width={200}
+        height={200}
         className="w-full h-full p-4 object-contain"
       />
     </div>
     <div className="bg-white aspect-square w-full p-4 rounded-lg shadow-sm flex items-center justify-center transition-all hover:shadow-md">
-      <img 
+      <Image 
         src="/f6.png" 
-        alt="Mixed-Use Developer Logo" 
+        alt="Food Industry Logo" 
+        width={200}
+        height={200}
         className="w-full h-full p-4 object-contain"
       />
     </div>
     <div className="bg-white aspect-square w-full p-4 rounded-lg shadow-sm flex items-center justify-center transition-all hover:shadow-md">
-      <img 
+      <Image 
         src="/f7.png" 
-        alt="Mixed-Use Developer Logo" 
+        alt="Food Industry Logo" 
+        width={200}
+        height={200}
         className="w-full h-full p-4 object-contain"
       />
     </div>
     <div className="bg-white aspect-square w-full p-4 rounded-lg shadow-sm flex items-center justify-center transition-all hover:shadow-md">
-      <img 
+      <Image 
         src="/f8.png" 
-        alt="Mixed-Use Developer Logo" 
+        alt="Food Industry Logo" 
+        width={200}
+        height={200}
         className="w-full h-full p-4 object-contain"
       />
     </div>
     <div className="bg-white aspect-square w-full p-4 rounded-lg shadow-sm flex items-center justify-center transition-all hover:shadow-md">
-      <img 
+      <Image 
         src="/f9.png" 
-        alt="Mixed-Use Developer Logo" 
+        alt="Food Industry Logo" 
+        width={200}
+        height={200}
         className="w-full h-full p-4 object-contain"
       />
     </div>
     <div className="bg-white aspect-square w-full p-4 rounded-lg shadow-sm flex items-center justify-center transition-all hover:shadow-md">
-      <img 
+      <Image 
         src="/f10.png" 
-        alt="Mixed-Use Developer Logo" 
+        alt="Food Industry Logo" 
+        width={200}
+        height={200}
         className="w-full h-full p-4 object-contain"
       />
     </div>
     <div className="bg-white aspect-square w-full p-4 rounded-lg shadow-sm flex items-center justify-center transition-all hover:shadow-md">
-      <img 
+      <Image 
         src="/f11.png" 
-        alt="Mixed-Use Developer Logo" 
+        alt="Food Industry Logo" 
+        width={200}
+        height={200}
         className="w-full h-full p-4 object-contain"
       />
     </div>
@@ -846,20 +958,21 @@ export default function CareerIntro() {
 </div>
 
 {/* Oil--------------------------------------------------------------------------------------------------------------------------------------------------------------- */}
-       <div className="w-full relative h-64 md:h-96">
-        <Image
-          src="/oil3.png" // Replace with your actual banner image path
-          alt="A to Zee Switchgear Careers"
-          fill
-          className="object-cover"
-          priority
-        />
-        <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
-          <h1 className={`text-4xl md:text-6xl lg:text-7xl font-bold text-white text-center px-4 tracking-wider ${dmSans.className}`}>
- Oil Refinery Terminals
-</h1>
-        </div>
-      </div>
+<div className="w-full relative h-64 md:h-96">
+  <Image
+    src="/oil3.png"
+    alt="A to Zee Switchgear Careers"
+    fill
+    className="object-cover"
+    priority
+  />
+  <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
+    <h1 className={`text-4xl md:text-6xl lg:text-7xl font-bold text-white text-center px-4 tracking-wider ${dmSans.className}`}>
+      Oil Refinery Terminals
+    </h1>
+  </div>
+</div>
+
 <div className={`w-full ${dmSans.variable}`}>
   <div className="px-4 py-12 md:py-20 pl-10">
     <div className="text-left">
@@ -873,59 +986,69 @@ export default function CareerIntro() {
   </div>
 </div>
 
-
- {/* Logo Showcase Section */}
+{/* Logo Showcase Section */}
 <div className="w-full bg-white py-10 px-2 pt-0 md:px-8">
-  
   <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 max-w-6xl mx-auto">
     {/* Logo 1 */}
     <div className="bg-white aspect-square w-full p-4 rounded-lg shadow-sm flex items-center justify-center transition-all hover:shadow-md">
-      <img 
+      <Image 
         src="/o1.png" 
-        alt="Commercial Developer Logo" 
+        alt="Oil Industry Logo" 
+        width={200}
+        height={200}
         className="w-full h-full p-4 object-contain"
       />
     </div>
     
     {/* Logo 2 */}
     <div className="bg-white aspect-square w-full p-4 rounded-lg shadow-sm flex items-center justify-center transition-all hover:shadow-md">
-      <img 
-        src="o2.png" 
-        alt="Retail Chain Logo" 
+      <Image 
+        src="/o2.png" 
+        alt="Oil Industry Logo" 
+        width={200}
+        height={200}
         className="w-full h-full p-4 object-contain"
       />
     </div>
     
     {/* Logo 3 */}
     <div className="bg-white aspect-square w-full p-4 rounded-lg shadow-sm flex items-center justify-center transition-all hover:shadow-md">
-      <img 
+      <Image 
         src="/o3.png" 
-        alt="Property Group Logo" 
+        alt="Oil Industry Logo" 
+        width={200}
+        height={200}
         className="w-full h-full p-4 object-contain"
       />
     </div>
     
     {/* Logo 4 */}
     <div className="bg-white aspect-square w-full p-4 rounded-lg shadow-sm flex items-center justify-center transition-all hover:shadow-md">
-      <img 
+      <Image 
         src="/o44.png" 
-        alt="Office REIT Logo" 
+        alt="Oil Industry Logo" 
+        width={200}
+        height={200}
         className="w-full h-full p-4 object-contain"
       />
     </div>
     
     {/* Logo 5 */}
     <div className="bg-white aspect-square w-full p-4 rounded-lg shadow-sm flex items-center justify-center transition-all hover:shadow-md">
-      <img 
+      <Image 
         src="/o5.png" 
-        alt="Mixed-Use Developer Logo" 
+        alt="Oil Industry Logo" 
+        width={200}
+        height={200}
         className="w-full h-full p-4 object-contain"
       />
     </div>
     <div className="bg-white aspect-square w-full p-4 rounded-lg shadow-sm flex items-center justify-center transition-all hover:shadow-md">
-      <img 
+      <Image 
         src="/o6.png" 
-        alt="Mixed-Use Developer Logo" 
+        alt="Oil Industry Logo" 
+        width={200}
+        height={200}
         className="w-full h-full p-4 object-contain"
       />
     </div>
@@ -933,20 +1056,20 @@ export default function CareerIntro() {
 </div>
 
 {/* Cable ---------------------------------------------------------------------------------------------------------------------------------------------------------------*/}
-       <div className="w-full relative h-64 md:h-96">
-        <Image
-          src="/tc.png" // Replace with your actual banner image path
-          alt="A to Zee Switchgear Careers"
-          fill
-          className="object-cover"
-          priority
-        />
-        <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
-          <h1 className={`text-4xl md:text-6xl lg:text-7xl font-bold text-white text-center px-4 tracking-wider ${dmSans.className}`}>
- Telecommunications & Cable Industries
-</h1>
-        </div>
-      </div>
+<div className="w-full relative h-64 md:h-96">
+  <Image
+    src="/tc.png"
+    alt="A to Zee Switchgear Careers"
+    fill
+    className="object-cover"
+    priority
+  />
+  <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
+    <h1 className={`text-4xl md:text-6xl lg:text-7xl font-bold text-white text-center px-4 tracking-wider ${dmSans.className}`}>
+      Telecommunications & Cable Industries
+    </h1>
+  </div>
+</div>
 
 <div className={`w-full ${dmSans.variable}`}>
   <div className="px-4 py-12 md:py-20 pl-10">
@@ -961,140 +1084,157 @@ export default function CareerIntro() {
   </div>
 </div>
 
-
-
- {/* Logo Showcase Section */}
+{/* Logo Showcase Section */}
 <div className="w-full bg-white py-10 px-2 pt-0 md:px-8">
-  
   <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 max-w-6xl mx-auto">
     {/* Logo 1 */}
     <div className="bg-white aspect-square w-full p-4 rounded-lg shadow-sm flex items-center justify-center transition-all hover:shadow-md">
-      <img 
+      <Image 
         src="/c1.png" 
-        alt="Commercial Developer Logo" 
+        alt="Telecom Industry Logo" 
+        width={200}
+        height={200}
         className="w-full h-full p-4 object-contain"
       />
     </div>
     
     {/* Logo 2 */}
     <div className="bg-white aspect-square w-full p-4 rounded-lg shadow-sm flex items-center justify-center transition-all hover:shadow-md">
-      <img 
-        src="c2.png" 
-        alt="Retail Chain Logo" 
+      <Image 
+        src="/c2.png" 
+        alt="Telecom Industry Logo" 
+        width={200}
+        height={200}
         className="w-full h-full p-4 object-contain"
       />
     </div>
     
     {/* Logo 3 */}
     <div className="bg-white aspect-square w-full p-4 rounded-lg shadow-sm flex items-center justify-center transition-all hover:shadow-md">
-      <img 
+      <Image 
         src="/c3.png" 
-        alt="Property Group Logo" 
+        alt="Telecom Industry Logo" 
+        width={200}
+        height={200}
         className="w-full h-full p-4 object-contain"
       />
     </div>
     
     {/* Logo 4 */}
     <div className="bg-white aspect-square w-full p-4 rounded-lg shadow-sm flex items-center justify-center transition-all hover:shadow-md">
-      <img 
+      <Image 
         src="/c4.png" 
-        alt="Office REIT Logo" 
+        alt="Telecom Industry Logo" 
+        width={200}
+        height={200}
         className="w-full h-full p-4 object-contain"
       />
     </div>
     
     {/* Logo 5 */}
     <div className="bg-white aspect-square w-full p-4 rounded-lg shadow-sm flex items-center justify-center transition-all hover:shadow-md">
-      <img 
+      <Image 
         src="/c5.png" 
-        alt="Mixed-Use Developer Logo" 
+        alt="Telecom Industry Logo" 
+        width={200}
+        height={200}
         className="w-full h-full p-4 object-contain"
       />
     </div>
   </div>
 </div>
 
-
 {/* Malls---------------------------------------------------------------------------------------------------------------------------------------------------------- */}
-       <div className="w-full relative h-64 md:h-96">
-        <Image
-          src="/cb.png" // Replace with your actual banner image path
-          alt="A to Zee Switchgear Careers"
-          fill
-          className="object-cover"
-          priority
-        />
-        <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
-          <h1 className={`text-4xl md:text-6xl lg:text-7xl font-bold text-white text-center px-4 tracking-wider ${dmSans.className}`}>
- Commercial Buildings
-</h1>
-        </div>
-      </div>
+<div className="w-full relative h-64 md:h-96">
+  <Image
+    src="/cb.png"
+    alt="A to Zee Switchgear Careers"
+    fill
+    className="object-cover"
+    priority
+  />
+  <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
+    <h1 className={`text-4xl md:text-6xl lg:text-7xl font-bold text-white text-center px-4 tracking-wider ${dmSans.className}`}>
+      Commercial Buildings
+    </h1>
+  </div>
+</div>
 
-      <div className={`w-full ${dmSans.variable}`}>
+<div className={`w-full ${dmSans.variable}`}>
   <div className="px-4 py-12 md:py-20 pl-10">
     <div className="text-left">
       <p className={`text-3xl md:text-4xl ${dmSans.className} font-semibold tracking-wide text-black mb-6 md:mb-8 leading-tight`}>
         Smart Power Solutions for Modern Commercial Spaces
       </p>
       <p className={`text-gray-700 mb-8 md:mb-10 leading-relaxed font-normal text-base md:text-xl tracking-wider ${lato.variable} font-sans`}>
-        We power tomorrow's workplaces with energy-efficient electrical systems designed for office towers, retail complexes, and mixed-use developments. Our intelligent power distribution solutions integrate seamlessly with building automation systems to optimize HVAC, lighting, and elevator operations while meeting LEED and WELL certification requirements. Trusted by property developers nationwide, we deliver reliable, scalable infrastructure that reduces operational costs, enhances tenant comfort, and future-proofs commercial buildings for evolving smart technologies.
+        We power tomorrow&apos;s workplaces with energy-efficient electrical systems designed for office towers, retail complexes, and mixed-use developments. Our intelligent power distribution solutions integrate seamlessly with building automation systems to optimize HVAC, lighting, and elevator operations while meeting LEED and WELL certification requirements. Trusted by property developers nationwide, we deliver reliable, scalable infrastructure that reduces operational costs, enhances tenant comfort, and future-proofs commercial buildings for evolving smart technologies.
       </p>
     </div>
   </div>
 </div>
- {/* Logo Showcase Section */}
+
+{/* Logo Showcase Section */}
 <div className="w-full bg-white py-10 px-2 pt-0 md:px-8">
-  
   <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 max-w-6xl mx-auto">
     {/* Logo 1 */}
     <div className="bg-white aspect-square w-full p-4 rounded-lg shadow-sm flex items-center justify-center transition-all hover:shadow-md">
-      <img 
+      <Image 
         src="/m1.png" 
-        alt="Commercial Developer Logo" 
+        alt="Commercial Building Logo" 
+        width={200}
+        height={200}
         className="w-full h-full p-4 object-contain"
       />
     </div>
     
     {/* Logo 2 */}
     <div className="bg-white aspect-square w-full p-4 rounded-lg shadow-sm flex items-center justify-center transition-all hover:shadow-md">
-      <img 
-        src="m2.png" 
-        alt="Retail Chain Logo" 
+      <Image 
+        src="/m2.png" 
+        alt="Commercial Building Logo" 
+        width={200}
+        height={200}
         className="w-full h-full p-4 object-contain"
       />
     </div>
     
     {/* Logo 3 */}
     <div className="bg-white aspect-square w-full p-4 rounded-lg shadow-sm flex items-center justify-center transition-all hover:shadow-md">
-      <img 
+      <Image 
         src="/m6.png" 
-        alt="Property Group Logo" 
+        alt="Commercial Building Logo" 
+        width={200}
+        height={200}
         className="w-full h-full p-4 object-contain"
       />
     </div>
     
     {/* Logo 4 */}
     <div className="bg-white aspect-square w-full p-4 rounded-lg shadow-sm flex items-center justify-center transition-all hover:shadow-md">
-      <img 
+      <Image 
         src="/m4.png" 
-        alt="Office REIT Logo" 
+        alt="Commercial Building Logo" 
+        width={200}
+        height={200}
         className="w-full h-full p-4 object-contain"
       />
     </div>
     
     {/* Logo 5 */}
     <div className="bg-white aspect-square w-full p-4 rounded-lg shadow-sm flex items-center justify-center transition-all hover:shadow-md">
-      <img 
+      <Image 
         src="/m5.png" 
-        alt="Mixed-Use Developer Logo" 
+        alt="Commercial Building Logo" 
+        width={200}
+        height={200}
         className="w-full h-full p-4 object-contain"
       />
     </div>
   </div>
 </div>
 
-      <Footer />
+<ScrollToTopButton/>
+<Footer />
     </>
   );
 }

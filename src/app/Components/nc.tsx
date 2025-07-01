@@ -14,32 +14,32 @@ const services = [
   {
     name: "Switchgear Systems",
     image: "/nc1.png",
-    link: "/power-distribution"
+    link: "/switchgear-systems"
   },
   {
     name: "Support Services",
     image: "/nc2.png",
-    link: "/switchgear"
+    link: "/support-services"
   },
   {
     name: "Automation And Control Systems",
     image: "/nc3.png",
-    link: "/ems"
+    link: "/automation-and-control-systems"
   },
   {
     name: "Power Distribution Boards",
     image: "/nc4.png",
-    link: "/automation"
+    link: "/power-distribution-boards"
   },
   {
     name: "Lighting Distribution Boards",
     image: "/nc5.png",
-    link: "/instrumentation-control"
+    link: "/lighting-distribution-boards"
   },
   {
     name: "Cable Tray System",
     image: "/nc6.png",
-    link: "/pneumatics"
+    link: "/cable-tray-systems"
   },
 ];
 

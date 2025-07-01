@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 
 const BankingServices = () => {
   const services = [
@@ -21,8 +22,8 @@ const BankingServices = () => {
               className="bg-white shadow-xl p-4 sm:p-6 md:p-8 flex flex-col items-center border border-gray-500 hover:shadow-2xl transition-all duration-300 w-full max-w-xs sm:max-w-none sm:w-[250px] md:w-[280px] lg:w-[300px] h-auto aspect-square mx-auto"
             >
               <div className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 mb-4 sm:mb-5 md:mb-6 flex items-center justify-center">
-                <img 
-                  src={service.image} 
+                <Image 
+                src={service.image} 
                   alt={service.name} 
                   className="w-full h-full object-contain"
                   loading="lazy"

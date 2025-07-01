@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { client } from '@/sanity/lib/client';
 import { FaChevronDown, FaChevronUp, FaArrowRight } from 'react-icons/fa';
-import { PortableText } from '@portabletext/react';
+import { PortableText, PortableTextReactComponents } from '@portabletext/react';
 import Navbar from '../../Components/navbar';
 import Footer from '../../Components/footer';
 import ContactBar from '../../Components/topbar';
@@ -14,6 +14,21 @@ const dmsans = DM_Sans({
   weight: '700',
 });
 
+interface PortableTextMark {
+  _type: string;
+  href?: string;
+}
+
+interface PortableTextBlock {
+  _type: string;
+  children: {
+    _type: string;
+    text: string;
+    marks?: string[];
+  }[];
+  markDefs?: PortableTextMark[];
+}
+
 interface JobOpening {
   _id: string;
   title: string;
@@ -21,11 +36,37 @@ interface JobOpening {
   location: string;
   type: string;
   experienceLevel: string;
-  description: any;
-  requirements: any[];
+  description: PortableTextBlock[];
+  requirements: PortableTextBlock[];
   postedDate: string;
   applicationDeadline?: string;
 }
+
+interface PortableTextLinkProps {
+  value?: {
+    href?: string;
+  };
+  children?: React.ReactNode;
+}
+
+interface PortableTextBlockProps {
+  children?: React.ReactNode;
+}
+
+const portableTextComponents: Partial<PortableTextReactComponents> = {
+  marks: {
+    link: ({ value, children }: PortableTextLinkProps) => {
+      return (
+        <a href={value?.href} className="text-blue-500 hover:underline" target="_blank" rel="noopener noreferrer">
+          {children}
+        </a>
+      );
+    },
+  },
+  block: {
+    normal: ({ children }: PortableTextBlockProps) => <p className="mb-4">{children}</p>,
+  },
+};
 
 async function getJobOpenings(): Promise<JobOpening[]> {
   const query = `*[_type == "career"] {
@@ -65,21 +106,6 @@ export default function CurrentOpenings() {
     setExpandedJobId(expandedJobId === id ? null : id);
   };
 
-  const portableTextComponents = {
-    marks: {
-      link: ({ value, children }: any) => {
-        return (
-          <a href={value?.href} className="text-blue-500 hover:underline" target="_blank" rel="noopener noreferrer">
-            {children}
-          </a>
-        );
-      },
-    },
-    block: {
-      normal: ({ children }: any) => <p className="mb-4">{children}</p>,
-    },
-  };
-
   return (
     <>
       <ContactBar />
@@ -97,7 +123,6 @@ export default function CurrentOpenings() {
             <div className="space-y-4 mx-auto" style={{ width: '90%' }}>
               {jobs.map((job) => (
                 <div key={job._id} className="border border-gray-200 overflow-hidden w-full">
-                  {/* Job Title Only - Collapsed State */}
                   <div 
                     className="flex justify-between items-center p-6 cursor-pointer hover:bg-gray-50 transition-colors"
                     onClick={() => toggleJobDetails(job._id)}
@@ -115,10 +140,8 @@ export default function CurrentOpenings() {
                     )}
                   </div>
 
-                  {/* All Other Details - Expanded State */}
                   {expandedJobId === job._id && (
                     <div className="p-6 pt-6 border-t border-gray-100 space-y-6">
-                      {/* Basic Info */}
                       <div className="grid grid-cols-2 gap-4">
                         <div>
                           <h3 className={`text-3xl tracking-wider font-bold text-[#8B5E3C] ${dmsans.className}`}>Department:</h3>
@@ -138,7 +161,6 @@ export default function CurrentOpenings() {
                         </div>
                       </div>
 
-                      {/* Job Description */}
                       <div>
                         <h3 className={`text-3xl tracking-wider font-bold text-[#8B5E3C] ${dmsans.className}`}>Job Description:</h3>
                         <div className={`text-base text-xl pt-5 font-medium tracking-wider ${dmsans.className}`}>
@@ -149,7 +171,6 @@ export default function CurrentOpenings() {
                         </div>
                       </div>
                       
-                      {/* Requirements */}
                       <div>
                         <h3 className={`text-3xl tracking-wider font-bold text-[#8B5E3C] ${dmsans.className}`}>Requirements:</h3>
                         <ul className={`text-base text-xl pt-5 font-medium tracking-wider ${dmsans.className}`}>
@@ -161,7 +182,6 @@ export default function CurrentOpenings() {
                         </ul>
                       </div>
 
-                      {/* Dates and Apply Button */}
                       <div className="flex justify-between items-center">
                         <div className={`text-base text-xl font-medium tracking-wider ${dmsans.className}`}>
                           <div>

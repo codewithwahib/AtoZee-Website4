@@ -1,4 +1,6 @@
 import React from 'react';
+import Image from 'next/image';
+
 
 const AboutComponent: React.FC = () => {
   // Replace these with your actual image paths
@@ -26,13 +28,14 @@ const AboutComponent: React.FC = () => {
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 px-4">
           {imagePaths.map((image, index) => (
             <div key={index} className="relative pb-[100%] overflow-hidden shadow-xl group">
-              {/* Square container with padding-bottom trick */}
-              <img 
-                src={image} 
-                alt={`About our company ${index + 1}`}
-                className="absolute top-0 left-0 w-full h-full pt-9 object-cover group-hover:scale-105 transition-transform duration-300"
-              />
-            </div>
+  {/* Square container with padding-bottom trick */}
+  <Image
+    src={image}
+    alt={`About our company ${index + 1}`}
+    fill
+    className="absolute top-0 left-0 w-full h-full pt-9 object-cover group-hover:scale-105 transition-transform duration-300"
+  />
+</div>
           ))}
         </div>
       </div>

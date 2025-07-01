@@ -6,8 +6,8 @@ import { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 // import BannerSection from '../Components/aboutbanner';
-import AboutComponent from '../Components/standard2';
-import TextImageComponent from '@/app/Components/abtop'
+// import AboutComponent from '../Components/standard2';
+// import TextImageComponent from '@/app/Components/abtop'
 // import Clients from '@/app/Components/ourclient';
 import AboutUsSection from '@/app/Components/about'
 import FeatureSection from "@/app/Components/standard";

@@ -34,24 +34,23 @@ export default function CareerIntro() {
       </div>
 
       {/* Content Section */}
-     <div className={`w-full ${dmSans.variable}`}>
-        <div className="px-4 py-12 md:py-20 pl-10"> {/* Removed max-w and mx-auto */}
+      <div className={`w-full ${dmSans.variable}`}>
+        <div className="px-4 py-12 md:py-20 pl-10">
           <div className="text-left">
             <p className="text-3xl md:text-4xl font-semibold font-serif tracking-wide text-black mb-6 md:mb-8 leading-tight">
               Build Your Future with A to Zee Switchgear Engineering
             </p>
             <p className="text-gray-700 mb-8 md:mb-10 leading-relaxed font-normal text-base md:text-lg font-serif tracking-wider">
-              At A to Zee Switchgear, we power progress through innovation in electrical engineering solutions. As a leading manufacturer of premium switchgear systems and power distribution products, we're looking for talented professionals to join our growing team.            </p>
+              At A to Zee Switchgear, we power progress through innovation in electrical engineering solutions. As a leading manufacturer of premium switchgear systems and power distribution products, we&apos;re looking for talented professionals to join our growing team.
+            </p>
 
             <p className="text-gray-700 mb-8 md:mb-10 leading-relaxed font-normal text-base md:text-lg font-serif tracking-wider">
-             We offer more than just jobs – we provide opportunities to work on cutting-edge projects, develop specialized skills, and be part of a company that's shaping Pakistan's energy infrastructure. Our culture values expertise, safety, and teamwork, offering competitive benefits and continuous learning in a dynamic industry.            </p>
+              We offer more than just jobs – we provide opportunities to work on cutting-edge projects, develop specialized skills, and be part of a company that&apos;s shaping Pakistan&apos;s energy infrastructure. Our culture values expertise, safety, and teamwork, offering competitive benefits and continuous learning in a dynamic industry.
+            </p>
             
-             <p className="text-gray-700 mb-8 md:mb-10 leading-relaxed font-normal text-base md:text-lg font-serif tracking-wider">
-          Explore how your skills can energize your career with us.
-             </p>
-         
-         
-        
+            <p className="text-gray-700 mb-8 md:mb-10 leading-relaxed font-normal text-base md:text-lg font-serif tracking-wider">
+              Explore how your skills can energize your career with us.
+            </p>
           </div>
         </div>
       </div>

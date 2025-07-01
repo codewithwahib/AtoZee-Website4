@@ -8,11 +8,13 @@ import MediumVoltage from './mediumvoltageswitchgear'
 // import Stainless from './stainlesssteelstructure' // Fixed typo from original
 import Empty from './typetestedpanels'
 import Cable from './cabletraysandladder'
+import ContactBar from '../Components/topbar'
 
 export default function HomePage() {
   return (
     <main className="min-h-screen flex flex-col bg-white">
       {/* <TopBar /> */}
+      <ContactBar/>
       <Navbar />
       <div className="flex-grow">
         <Products />

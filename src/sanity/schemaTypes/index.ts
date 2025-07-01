@@ -16,7 +16,7 @@ import { hero2 } from './hero2'
 import { hero3 } from './hero3'
 import { hero4 } from './hero4'
 import { hero5 } from './hero5'
-import homeproduct from './mainp'
+// import homeproduct from './mainp'
 import { ad } from './ad'
 import { pureImage } from './ourclients'
 import { abouthome1 } from './abouthome1'
@@ -40,7 +40,7 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     hero4,
     hero5,
     career,
-    homeproduct,
+    // homeproduct,
     lowvoltageswitchgearpanels,
     // lowvoltageswitchgearpanelsdistributionboards,
     mediumvoltageswitchgear,

@@ -1,10 +1,10 @@
 'use client';
-import { Libre_Baskerville } from 'next/font/google';
-import { useState, useRef } from 'react';
+
+import { useState, useRef, useEffect } from 'react';
 import Navbar from '../Components/navbar';
 import Footer from '../Components/footer';
-import Image from 'next/image';
 import { DM_Sans } from 'next/font/google';
+import ContactBar from '../Components/topbar';
 
 const dmSans = DM_Sans({
   subsets: ['latin'],
@@ -14,13 +14,12 @@ const dmSans = DM_Sans({
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
-  const [address, setAddress] = useState('');
-  const [mapHeading, setMapHeading] = useState(0);
-  const [mapTilt, setMapTilt] = useState(0);
-  const mapRef = useRef<HTMLIFrameElement>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const formRef = useRef<HTMLFormElement>(null);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setIsSubmitting(true);
     const form = e.currentTarget;
 
     try {
@@ -35,15 +34,32 @@ export default function ContactPage() {
       if (res.ok) {
         setSubmitted(true);
         form.reset();
-        setTimeout(() => setSubmitted(false), 5000);
+        // Scroll to the notification
+        window.scrollTo({
+          top: formRef.current?.offsetTop || 0,
+          behavior: 'smooth'
+        });
       }
     } catch (err) {
       console.error('Form submission error:', err);
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
+  // Auto-hide the success message after 5 seconds
+  useEffect(() => {
+    if (submitted) {
+      const timer = setTimeout(() => {
+        setSubmitted(false);
+      }, 5000);
+      return () => clearTimeout(timer);
+    }
+  }, [submitted]);
+
   return (
     <div className={`${dmSans.variable} font-sans text-gray-800 bg-white`}>
+      <ContactBar/>
       <Navbar />
 
       {/* HEAD OFFICE Section */}
@@ -244,16 +260,28 @@ export default function ContactPage() {
         </div>
       </section>
        
-      <section className="relative py-12 px-4 md:px-28 bg-white my-12 w-full">
+      <section className="relative py-12 px-4 md:px-28 bg-white my-12 w-full" ref={formRef}>
         <div className="text-center mb-6 md:mb-10 max-w-4xl mx-auto">
           <h2 className="text-2xl md:text-4xl font-bold text-black tracking-normal">
             Get In Touch With Us
           </h2>
         </div>
 
+        {submitted && (
+          <div className="mb-6 p-4 bg-green-100 text-green-700 rounded-lg text-center transition-all duration-300">
+            <div className="flex items-center justify-center space-x-2">
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>Thank you for your message! We&apos;ll get back to you soon.</span>
+            </div>
+          </div>
+        )}
+
         <form 
           action="https://formsubmit.co/ajax/info@atozee.net"
           method="POST"
+          onSubmit={handleSubmit}
           className="space-y-4 md:space-y-6 w-full pt-4 md:pt-8"
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 w-full">
@@ -333,18 +361,28 @@ export default function ContactPage() {
 
           {/* Submit Button */}
           <div className="pt-2 md:pt-4 w-96 mx-auto">
-  <button
-    type="submit"
-    className="w-full px-4 py-4 items-center rounded-lg  text-base md:text-lg bg-black text-white font-medium  hover:bg-gray-950 transition duration-300 focus:outline-none focus:ring-1 focus:ring-[#6B4F3B]"
-  >
-    SUBMIT
-  </button>
-</div>
-          {submitted && (
-            <div className="mt-3 md:mt-4 p-3 md:p-4 bg-green-100 text-green-700 text-base md:text-lg w-full">
-              Thank you for your message! We'll get back to you soon.
-            </div>
-          )}
+            <button
+              type="submit"
+              disabled={isSubmitting}
+              className={`w-full px-4 py-4 items-center rounded-lg text-base md:text-lg font-medium transition duration-300 focus:outline-none focus:ring-1 focus:ring-[#6B4F3B] ${
+                isSubmitting 
+                  ? 'bg-gray-400 cursor-not-allowed' 
+                  : 'bg-[#8B5E3C] text-white hover:bg-[#8B5E3C]'
+              }`}
+            >
+              {isSubmitting ? (
+                <span className="flex items-center justify-center">
+                  <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                  </svg>
+                  Sumbitting...
+                </span>
+              ) : (
+                'SUBMIT'
+              )}
+            </button>
+          </div>
         </form>
       </section>
       <Footer />

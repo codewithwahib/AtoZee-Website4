@@ -7,13 +7,17 @@ import Navbar from "./Components/navbar";
 import Footer from "./Components/footer";
 // import Workflow from "./Components/workflow";
 import Hero from "@/app/Components/hero"
-import ServicesGrid from "./Components/nc";
-import BankingServices from "./Components/sf";
+// import ServicesGrid from "./Components/nc";
+// import BankingServices from "./Components/sf";
 import Overview from "./Components/overview";
-import Pblog from './Components/pblog';
+// import Pblog from './Components/pblog';
 import Banner from "./Components/quality-safety-inovation";
 // import News1 from "./Components/news";
 import NewsSection from "./Components/news";
+import ScrollToTopButton from './Components/scroll';
+
+
+
 
 export default function Home() {
   return (
@@ -29,6 +33,7 @@ export default function Home() {
       {/* <WhyChooseUs /> */}
       {/* <BankingServices/> */}
        {/* <IndustriesServed /> */}
+       <ScrollToTopButton/>
        <Footer />
     </div>
   );

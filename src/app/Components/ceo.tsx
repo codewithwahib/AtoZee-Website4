@@ -32,10 +32,10 @@ export default function CeoMissionSection() {
         {/* Content */}
         <div className="relative z-10 max-w-[600px] mt-8">
           <h3 className={`text-3xl pl-4 pr-4 pt-2 pb-2 font-bold text-black mb-6 uppercase tracking-wider bg-white inline-block ${dmsans.className}`}>
-            CEO's Message
+            CEO&apos;s Message
           </h3>
           <p className={`text-white text-lg tracking-wider leading-relaxed mb-8 italic ${dmsans.className}`}>
-            At Jubilee Corporation, we take pride in providing highest quality products with individualized customer service, and building lasting relationships with our customers.
+            At A to Zee Switchgear, we are committed to delivering innovative and reliable electrical solutions that power progress with excellence. Our dedication to quality, safety, and customer satisfaction drives us to be your trusted partner in electrical engineering.
           </p>
           <Link href="/ceo-message" passHref>
             <button className={`text-black font-semibold px-4 py-3 bg-white hover:bg-gray-100 transition uppercase tracking-wider rounded-sm flex items-center gap-2 group border border-black hover:border-gray-400 ${dmsans.className}`}>
@@ -52,7 +52,9 @@ export default function CeoMissionSection() {
           OUR STORY
         </h3>
         <p className={`text-lg leading-relaxed mb-8 tracking-wider pb-6 italic text-gray-600 ${dmsans.className}`}>
-          "To be the market leaders in electrical, electronics and automation technology products by focusing on top quality products and services and to work for the satisfaction and progress of our customers and the community at large."
+          At A to Zee Switchgear, we began with a vision to revolutionize electrical solutions through innovation and unwavering quality. Today, we stand as a trusted leader, powering industries with reliability, safety, and cutting-edge technology—every connection engineered for excellence.
+
+
         </p>
         <Link href="/about" passHref>
           <button className={`text-black font-semibold px-4 py-3 bg-white hover:bg-gray-100 transition uppercase tracking-wider rounded-sm border border-gray-900 flex items-center gap-2 group ${dmsans.className}`}>

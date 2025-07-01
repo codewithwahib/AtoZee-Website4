@@ -2,6 +2,8 @@ import React from 'react';
 import Image from 'next/image';
 import { FaArrowRight } from 'react-icons/fa';
 import { DM_Sans } from 'next/font/google'
+import Link from 'next/link';
+
 
 const dmsans = DM_Sans({ 
   subsets: ['latin'],
@@ -13,25 +15,25 @@ const FeatureSection = () => {
     {
       title: "Sales",
       description: "Quality and safety are two of the most important considerations in the power sector. DOHO switchgear is designed and manufactured keeping these two factors in mind. We use only the best parts and materials to make our products.",
-      link: "/sales-work-operation",
+      link: "/sales",
       image: "/sale1.png"
     },
     {
       title: "Prepare Design",
       description: "DOHO is a leading innovator in switchgear products, one of the best standard and OEM switchgear manufacturers across the globe. We ensure the most advanced technologies on our products and are always looking for ways to improve our manufacturing processes.",
-      link: "#",
+      link: "prepare-design",
       image: "/sd.png"
     },
     {
       title: "Purchase Action",
       description: "At DOHO, we understand that our customers need more than just quality products. They need a reliable partner they can count on for support and service. Our team is available 24/7 to provide the expert assistance you need for your project, when you need it.",
-      link: "#",
+      link: "purchase-action",
       image: "/p.png"
     },
     {
       title: "Manufacturing Activity",
       description: "At DOHO, we understand that our customers need more than just quality products. They need a reliable partner they can count on for support and service. Our team is available 24/7 to provide the expert assistance you need for your project, when you need it.",
-      link: "#",
+      link: "manafacturing-activity",
       image: "/w.png"
     }
   ];
@@ -80,11 +82,14 @@ const FeatureSection = () => {
                 
                 {/* Button */}
                 <div className="mt-auto pt-4">
-                  <button className={`w-full text-[#6B4F3B] font-semibold px-4 py-3 bg-white hover:bg-[#f5f0ea] transition-all duration-300 uppercase tracking-wider rounded-lg border border-[#d6c4b3] flex items-center justify-center gap-2 group hover:border-[#6B4F3B] ${dmsans.className}`}>
-                    READ MORE
-                    <FaArrowRight className="group-hover:translate-x-1 transition-transform" size={14} />
-                  </button>
-                </div>
+  <Link 
+    href={feature.link}
+    className={`w-full text-[#6B4F3B] font-semibold px-4 py-3 bg-white hover:bg-[#f5f0ea] transition-all duration-300 uppercase tracking-wider rounded-lg border border-[#d6c4b3] flex items-center justify-center gap-2 group hover:border-[#6B4F3B] ${dmsans.className}`}
+  >
+    READ MORE
+    <FaArrowRight className="group-hover:translate-x-1 transition-transform" size={14} />
+  </Link>
+</div>
               </div>
             </div>
           ))}

@@ -40,7 +40,7 @@ Engineering Trainee Program          </h1>
               Switchgear Engineering Trainee Program
             </p>
             <p className="text-gray-700 mb-8 md:mb-10 leading-relaxed font-normal text-base md:text-lg font-serif tracking-wider">
-              Gain hands-on experience with Pakistan's leading electrical solutions provider. Our intensive 12-month program combines practical workshops, on-the-job training, and mentorship from senior engineers across all aspects of switchgear production and installation.            </p>
+              Gain hands-on experience with Pakistan&apos;s leading electrical solutions provider. Our intensive 12-month program combines practical workshops, on-the-job training, and mentorship from senior engineers across all aspects of switchgear production and installation.            </p>
 
             <p className="text-gray-700 mb-8 md:mb-10 leading-relaxed font-normal text-base md:text-lg font-serif tracking-wider">
             Develop specialized skills in power distribution systems while working on real client projects. Successful trainees receive industry certifications and priority consideration for full-time engineering positions within our growing organization.            </p>

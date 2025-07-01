@@ -1,5 +1,5 @@
 'use client';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import Image from 'next/image';
 
 const Banner = () => {
@@ -38,28 +38,28 @@ const Banner = () => {
     }
   ];
 
-  const goToNext = () => {
+  const goToNext = useCallback(() => {
     setExitAnimation(true);
     setTimeout(() => {
       setActiveIndex((prev) => (prev + 1) % slides.length);
       setExitAnimation(false);
     }, 500);
-  };
+  }, [slides.length]);
 
-  const goToPrev = () => {
+  const goToPrev = useCallback(() => {
     setExitAnimation(true);
     setTimeout(() => {
       setActiveIndex((prev) => (prev - 1 + slides.length) % slides.length);
       setExitAnimation(false);
     }, 500);
-  };
+  }, [slides.length]);
 
   useEffect(() => {
     const interval = setInterval(goToNext, 5000);
     return () => clearInterval(interval);
-  }, []);
+  }, [goToNext]);
 
-  const handleDotClick = (index) => {
+  const handleDotClick = useCallback((index: number) => {
     if (index !== activeIndex) {
       setExitAnimation(true);
       setTimeout(() => {
@@ -67,7 +67,7 @@ const Banner = () => {
         setExitAnimation(false);
       }, 500);
     }
-  };
+  }, [activeIndex]);
 
   return (
     <div className="relative w-full h-[90vh] min-h-[700px] overflow-hidden">
