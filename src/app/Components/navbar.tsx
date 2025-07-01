@@ -16,8 +16,7 @@ const navItems = [
   { href: "/product", label: "Products" },
   { href: "/about", label: "About Us" },
   { 
-    href: "/careers", 
-    label: "Careers",
+    label: "Careers", // Removed href since we don't want it to be clickable
     subItems: [
       { href: "/careers/introduction", label: "Introduction" },
       { href: "/careers/training-program", label: "Training Program" },
@@ -25,7 +24,7 @@ const navItems = [
       { href: "/careers/apply-now", label: "Apply Now" },
     ]
   },
-  { href: "/our-clients", label: "Our Clients" }, // Added Clients button here
+  { href: "/our-clients", label: "Our Clients" },
   { href: "/contact", label: "Contact Us" },
 ];
 
@@ -76,28 +75,27 @@ export default function Navbar() {
         {/* Desktop Nav links */}
         <div className="hidden lg:flex items-center gap-8 ml-12">
           {navItems.map((item) => (
-            item.href === "/careers" ? (
+            item.subItems ? (
               <div 
-                key={item.href}
+                key={item.label}
                 className="relative group"
                 onMouseEnter={() => setCareersHover(true)}
                 onMouseLeave={() => setCareersHover(false)}
               >
-                <div className="flex items-center">
-                  <Link
-                    href={item.href}
+                <div className="flex items-center cursor-pointer">
+                  <span
                     className={`px-4 py-3 rounded-sm transition-all duration-200 text-lg xl:text-xl tracking-wider ${
-                      pathname === item.href || item.subItems?.some(subItem => pathname === subItem.href)
+                      item.subItems.some(subItem => pathname === subItem.href)
                         ? "bg-[#EEDFCC] text-[#6B4F3B]"
                         : "text-[#8B5E3C] hover:bg-[#F6EBD9] hover:text-[#6B4F3B]"
                     }`}
                   >
                     {item.label}
-                  </Link>
+                  </span>
                   <svg
                     className={`w-6 h-6 ml-1 transition-transform duration-200 ${
                       careersHover ? "rotate-180" : ""
-                    } ${pathname === item.href || item.subItems?.some(subItem => pathname === subItem.href) 
+                    } ${item.subItems.some(subItem => pathname === subItem.href) 
                       ? "text-[#6B4F3B]" 
                       : "text-[#8B5E3C]"}`}
                     fill="none"
@@ -115,7 +113,7 @@ export default function Navbar() {
                 </div>
                 {careersHover && (
                   <div className="absolute left-0 mt-0 w-72 bg-white shadow-lg rounded-sm z-50 border border-gray-200 overflow-hidden">
-                    {item.subItems?.map((subItem, index) => (
+                    {item.subItems.map((subItem, index) => (
                       <div key={subItem.href}>
                         <Link
                           href={subItem.href}
@@ -188,12 +186,12 @@ export default function Navbar() {
         <div className="lg:hidden bg-white border-t border-gray-200">
           <div className="px-4 pt-4 pb-6 space-y-3">
             {navItems.map((item) => (
-              item.href === "/careers" ? (
-                <div key={item.href}>
+              item.subItems ? (
+                <div key={item.label}>
                   <button
                     onClick={toggleCareersMenu}
                     className={`w-full flex justify-between items-center px-4 py-3 rounded-sm text-xl tracking-wider ${
-                      pathname === item.href || item.subItems?.some(subItem => pathname === subItem.href)
+                      item.subItems.some(subItem => pathname === subItem.href)
                         ? "bg-[#EEDFCC] text-[#6B4F3C]"
                         : "text-[#8B5E3C] hover:bg-[#F6EBD9] hover:text-[#6B4F3B]"
                     }`}
@@ -218,7 +216,7 @@ export default function Navbar() {
                   </button>
                   {careersHover && (
                     <div className="pl-6 mt-2 space-y-2 rounded-sm overflow-hidden border-l border-gray-200">
-                      {item.subItems?.map((subItem, index) => (
+                      {item.subItems.map((subItem, index) => (
                         <div key={subItem.href}>
                           <Link
                             href={subItem.href}
