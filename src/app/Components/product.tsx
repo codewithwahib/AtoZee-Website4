@@ -5,65 +5,65 @@ import Image from 'next/image';
 const products = [
   {
     title: 'Low Voltage Switchgear',
-    image: '/images/distribution.png',
+    image: '/p111.png',
     link: '/products/power-distribution',
   },
   {
     title: 'BlokSeT',
-    image: '/images/energy-management.png',
+    image: '/p111.png',
     link: '/products/energy-management',
     logo: '/s1.png'
   },
   {
     title: 'PrismaSeT',
-    image: '/images/protection-devices.png',
+    image: '/p111.png',
     link: '/products/protection-devices',
     logo: '/s1.png'
   },
   {
     title: 'Spacial SF Universal Enclosure',
-    image: '/images/protection-devices.png',
+    image: '/p111.png',
     link: '/products/protection-devices',
     logo: '/s1.png'
   },
   {
     title: 'Medium Voltage Switchgear',
-    image: '/images/control-panels.png',
+    image: '/p111.png',
     link: '/products/control-panels',
   },
   {
     title: 'Distribution Box',
-    image: '/images/distribution-boards.png',
+    image: '/p111.png',
     link: '/products/distribution-boards',
   },
   {
     title: 'Synchronization Panel',
-    image: '/images/sync-panel.png',
+    image: '/p111.png',
     link: '/products/synchronization',
   },
   {
     title: 'Active Harmonic Filter Solution',
-    image: '/images/harmonic-filter.png',
+    image: '/p111.png',
     link: '/products/harmonic-filters',
   },
   {
     title: 'KIOSK Substations',
-    image: '/images/substation.png',
+    image: '/p111.png',
     link: '/products/substations',
   },
   {
     title: 'Low Voltage Busway System',
-    image: '/images/busway-system.png',
+    image: '/p111.png',
     link: '/products/busway-systems',
   },
   {
     title: 'Dry Type Transformer',
-    image: '/images/transformer.png',
+    image: '/p111.png',
     link: '/products/transformers',
   },
   {
     title: 'VSD (Variable Speed Drives)',
-    image: '/images/vsd.png',
+    image: '/p111.png',
     link: '/products/variable-speed-drives',
   }
 ];
