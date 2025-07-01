@@ -83,7 +83,7 @@ export default function Products() {
         />
         <div className="absolute inset-0 flex flex-col items-center justify-center">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-serif text-white text-center px-4 tracking-wider shadow-lg">
-            " OUR PRODUCTS "
+            &quot;OUR PRODUCTS&quot;
           </h1>
           <p className="text-center text-white text-base sm:text-lg md:text-xl font-light mt-4 max-w-xs sm:max-w-md md:max-w-2xl mx-auto tracking-wide md:tracking-widest px-4">
             Explore our trusted range of switchgear and power management solutions.
