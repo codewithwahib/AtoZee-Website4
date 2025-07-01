@@ -83,7 +83,7 @@ export default function Products() {
         />
         <div className="absolute inset-0 flex flex-col items-center justify-center">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-serif text-white text-center px-4 tracking-wider shadow-lg">
-            “ OUR PRODUCTS ”
+            " OUR PRODUCTS "
           </h1>
           <p className="text-center text-white text-base sm:text-lg md:text-xl font-light mt-4 max-w-xs sm:max-w-md md:max-w-2xl mx-auto tracking-wide md:tracking-widest px-4">
             Explore our trusted range of switchgear and power management solutions.
@@ -101,7 +101,7 @@ export default function Products() {
               data-aos-delay={index * 100}
             >
               {product.logo && (
-                <div className="absolute top-0 left-0 z-10 bg-white p-1 md:p-2 shadow-sm md:shadow-md border-b border-r border-gray-200 rounded-br-md md:rounded-br-lg">
+                <div className="absolute top-0 left-0 z-10 bg-white p-1 md:p-2 shadow-sm md:shadow-md border-b border-r border-black rounded-br-md md:rounded-br-lg">
                   <Image
                     src={product.logo}
                     alt="Brand logo"
@@ -116,7 +116,7 @@ export default function Products() {
                 href={product.link}
                 className={`h-full bg-white rounded-sm shadow-sm md:shadow-md lg:shadow-lg border border-black hover:shadow-md md:hover:shadow-lg lg:hover:shadow-xl transition duration-300 block flex flex-col ${product.logo ? 'pt-6 md:pt-8' : ''}`}
               >
-                <div className="w-full h-40 sm:h-48 md:h-56 lg:h-64 p-2 md:p-3 lg:p-4 flex items-center justify-center bg-[#F9F9F9] rounded-t-sm md:rounded-t-lg relative overflow-hidden">
+                <div className="w-full h-40 sm:h-48 md:h-56 lg:h-64 p-2 md:p-3 lg:p-4 flex items-center justify-center bg-[#F9F9F9] rounded-t-sm md:rounded-t-lg border-b border-black relative overflow-hidden">
                   <Image
                     src={product.image}
                     alt={`${product.title} product illustration`}
