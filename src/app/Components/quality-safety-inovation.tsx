@@ -1,6 +1,13 @@
 'use client';
 import React, { useState, useEffect, useCallback } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
+import { DM_Sans } from 'next/font/google';
+
+const dmSans = DM_Sans({ 
+  subsets: ['latin'],
+  weight: ['400', '500', '700'],
+});
 
 const Banner = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -43,15 +50,7 @@ const Banner = () => {
     setTimeout(() => {
       setActiveIndex((prev) => (prev + 1) % slides.length);
       setExitAnimation(false);
-    }, 500);
-  }, [slides.length]);
-
-  const goToPrev = useCallback(() => {
-    setExitAnimation(true);
-    setTimeout(() => {
-      setActiveIndex((prev) => (prev - 1 + slides.length) % slides.length);
-      setExitAnimation(false);
-    }, 500);
+    }, 300);
   }, [slides.length]);
 
   useEffect(() => {
@@ -65,81 +64,58 @@ const Banner = () => {
       setTimeout(() => {
         setActiveIndex(index);
         setExitAnimation(false);
-      }, 500);
+      }, 300);
     }
   }, [activeIndex]);
 
   return (
-    <div className="relative w-full h-[90vh] min-h-[700px] overflow-hidden">
+    <div className={`relative w-full h-[65vh] min-h-[450px] sm:h-[75vh] md:h-[80vh] lg:min-h-[550px] overflow-hidden ${dmSans.className}`}>
       <Image
         src={slides[activeIndex].image}
         alt="Banner"
-        layout="fill"
-        objectFit="cover"
-        className="brightness-75"
+        fill
+        className="object-cover brightness-75"
         priority
       />
 
       <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-30">
-        <div className="container mx-auto px-6 text-center">
-          <div className="max-w-5xl mx-auto">
+        <div className="container mx-auto px-4 sm:px-5 md:px-6 text-center">
+          <div className="max-w-3xl sm:max-w-4xl lg:max-w-5xl mx-auto">
             {/* Static heading */}
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold font-sans text-white mb-6 tracking-wide">
+            <h1 className={`text-2xl sm:text-3xl md:text-4xl lg:text-[2.8rem] font-bold text-white mb-3 sm:mb-5 tracking-wide ${dmSans.className}`}>
               {slides[0].heading}
             </h1>
             
-            {/* Animated content section with navigation buttons */}
-            <div className="mt-16 overflow-hidden relative">
-              {/* Navigation buttons */}
-              <div className="absolute top-1/2 left-0 right-0 -translate-y-1/2 flex justify-between items-center px-4">
-                <button 
-                  onClick={goToPrev}
-                  className="text-white bg-black bg-opacity-40 hover:bg-opacity-70 rounded-full w-14 h-14 flex items-center justify-center transition-all z-10 hover:scale-110"
-                  aria-label="Previous slide"
-                >
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                  </svg>
-                </button>
-                <button 
-                  onClick={goToNext}
-                  className="text-white bg-black bg-opacity-40 hover:bg-opacity-70 rounded-full w-14 h-14 flex items-center justify-center transition-all z-10 hover:scale-110"
-                  aria-label="Next slide"
-                >
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </button>
-              </div>
-
+            {/* Animated content section */}
+            <div className="mt-6 sm:mt-8 md:mt-12 overflow-hidden relative">
               {/* Subheading animation */}
-              <div className={`transition-all duration-500 ease-in-out ${
+              <div className={`transition-all duration-300 ease-in-out ${
                 exitAnimation ? 'translate-x-full opacity-0' : 'translate-x-0 opacity-100'
               }`}>
-                <h2 className="text-4xl md:text-5xl font-bold font-light text-white mb-8 tracking-wide">
+                <h2 className={`text-xl sm:text-2xl md:text-3xl font-bold text-white mb-3 sm:mb-5 tracking-wide ${dmSans.className}`}>
                   {slides[activeIndex].subheading}
                 </h2>
               </div>
               
               {/* Description animation */}
-              <div className={`transition-all duration-500 ease-in-out delay-100 ${
+              <div className={`transition-all duration-300 ease-in-out delay-75 ${
                 exitAnimation ? 'translate-x-full opacity-0' : 'translate-x-0 opacity-100'
               }`}>
-                <p className="text-xl md:text-2xl text-white mb-12 mx-auto font-light tracking-wider max-w-3xl leading-relaxed">
+                <p className={`text-sm sm:text-base md:text-lg text-white mb-4 sm:mb-6 mx-auto font-light tracking-wider max-w-xl sm:max-w-2xl md:max-w-3xl leading-relaxed ${dmSans.className}`}>
                   {slides[activeIndex].description}
                 </p>
-              </div>
-              
-              {/* Button animation */}
-              <div className={`transition-all duration-500 ease-in-out delay-200 ${
-                exitAnimation ? 'translate-x-full opacity-0' : 'translate-x-0 opacity-100'
-              }`}>
-                <a
-                  href={slides[activeIndex].buttonLink}
-                  className="inline-block px-12 py-4 bg-white text-gray-800 rounded-lg font-medium text-xl transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
-                >
-                  {slides[activeIndex].buttonText}
-                </a>
+                
+                {/* Read More Button */}
+                <div className={`transition-all duration-300 ease-in-out delay-150 ${
+                  exitAnimation ? 'translate-x-full opacity-0' : 'translate-x-0 opacity-100'
+                }`}>
+                  <Link
+                    href={slides[activeIndex].buttonLink}
+                    className={`inline-block px-6 py-2 sm:px-8 sm:py-3 bg-white text-gray-800 rounded-md font-medium text-sm sm:text-base hover:bg-gray-100 transition-colors duration-300 ${dmSans.className}`}
+                  >
+                    {slides[activeIndex].buttonText}
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
@@ -147,13 +123,13 @@ const Banner = () => {
       </div>
 
       {/* Navigation dots */}
-      <div className="absolute bottom-16 left-0 right-0 flex justify-center gap-3">
+      <div className="absolute bottom-6 sm:bottom-8 md:bottom-12 left-0 right-0 flex justify-center gap-2 sm:gap-3">
         {slides.map((_, index) => (
           <button
             key={index}
             onClick={() => handleDotClick(index)}
-            className={`w-4 h-4 rounded-full transition-all ${
-              index === activeIndex ? 'bg-white w-10' : 'bg-white bg-opacity-50'
+            className={`w-1.5 h-1.5 sm:w-2 sm:h-2 md:w-2 md:h-2 rounded-full transition-all ${
+              index === activeIndex ? 'bg-white w-6 sm:w-8 md:w-10' : 'bg-white bg-opacity-50'
             }`}
             aria-label={`Go to slide ${index + 1}`}
           />

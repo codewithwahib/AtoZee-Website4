@@ -22,8 +22,8 @@ const ContactBar = () => {
             className="flex items-center gap-3 hover:text-blue-600 transition-colors group"
             aria-label="Email us"
           >
-            <MdOutlineMessage  className="text-[#8B5E3C] text-2xl md:text-3xl group-hover:scale-110 transition-transform" />
-            <span className={`text-base md:text-lg font-medium tracking-wider ${dmSans.className}`}>
+            <MdOutlineMessage  className="text-[#8B5E3C] text-md md:text-xl group-hover:scale-110 transition-transform" />
+            <span className={`text-base md:text-xs font-medium tracking-wider ${dmSans.className}`}>
 Get Free Inquiry            </span>
           </a>
         </div>
@@ -38,8 +38,8 @@ Get Free Inquiry            </span>
             className="flex items-center gap-3 hover:text-blue-600 transition-colors group"
             aria-label="Email us"
           >
-            <TfiEmail className="text-[#8B5E3C] text-2xl md:text-3xl group-hover:scale-110 transition-transform" />
-            <span className={`text-base md:text-lg font-medium tracking-wider ${dmSans.className}`}>
+            <TfiEmail className="text-[#8B5E3C] text-md md:text-xl group-hover:scale-110 transition-transform" />
+            <span className={`text-base md:text-xs font-medium tracking-wider ${dmSans.className}`}>
 info@atozee.net            </span>
           </a>
         </div>
@@ -54,12 +54,12 @@ info@atozee.net            </span>
             className="flex items-center gap-3 hover:text-blue-600 transition-colors group"
             aria-label="Call us"
           >
-            <SlCallIn className="text-[#8B5E3C] text-2xl md:text-3xl group-hover:scale-110 transition-transform" />
+            <SlCallIn className="text-[#8B5E3C] text-md md:text-xl group-hover:scale-110 transition-transform" />
             <div className="flex flex-col sm:flex-row sm:items-center sm:gap-2">
               {/* <span className={`text-base font-semibold md:text-lg ${dmSans.className}`}>
                 Talk to expert
               </span> */}
-              <span className={`text-base md:text-lg font-medium tracking-wider ${dmSans.className}`}>
+              <span className={`text-base md:text-xs font-medium tracking-wider ${dmSans.className}`}>
 +92 321-8752630            </span>
             </div>
 
@@ -79,7 +79,7 @@ info@atozee.net            </span>
             href="https://facebook.com" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="hover:text-[#3b5998] transition-colors text-2xl"
+            className="hover:text-[#3b5998] transition-colors text-md"
             aria-label="Facebook"
           >
             <FaFacebook />
@@ -91,7 +91,7 @@ info@atozee.net            </span>
             href="https://twitter.com" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="hover:text-[#1DA1F2] transition-colors text-2xl"
+            className="hover:text-[#1DA1F2] transition-colors text-md"
             aria-label="Twitter"
           >
             <FaTwitter />
@@ -103,7 +103,7 @@ info@atozee.net            </span>
             href="https://youtube.com" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="hover:text-[#FF0000] transition-colors text-2xl"
+            className="hover:text-[#FF0000] transition-colors text-md"
             aria-label="YouTube"
           >
             <FaYoutube />
@@ -115,7 +115,7 @@ info@atozee.net            </span>
             href="https://linkedin.com" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="hover:text-[#0077B5] transition-colors text-2xl"
+            className="hover:text-[#0077B5] transition-colors text-md"
             aria-label="LinkedIn"
           >
             <FaLinkedin />
@@ -127,7 +127,7 @@ info@atozee.net            </span>
             href="https://instagram.com" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="hover:text-[#E1306C] transition-colors text-2xl"
+            className="hover:text-[#E1306C] transition-colors text-xl"
             aria-label="Instagram"
           >
             <FaInstagram />

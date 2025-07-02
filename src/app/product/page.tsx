@@ -9,6 +9,7 @@ import MediumVoltage from './mediumvoltageswitchgear'
 import Empty from './typetestedpanels'
 import Cable from './cabletraysandladder'
 import ContactBar from '../Components/topbar'
+import ScrollToTopButton from '../Components/scroll';
 
 export default function HomePage() {
   return (
@@ -24,6 +25,7 @@ export default function HomePage() {
         <MediumVoltage />
         <Cable />
       </div>
+      <ScrollToTopButton/>
       <Footer />
     </main>
   )

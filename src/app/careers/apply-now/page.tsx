@@ -109,13 +109,13 @@ function ApplyNowForm() {
 
   return (
     <div className="min-h-screen bg-gray-50 relative">
-      <div className="max-w-4xl mx-auto px-4 py-12">
-        <h1 className={`text-3xl md:text-4xl font-bold text-gray-900 mb-8 ${dmsans.className}`}>
+      <div className="max-w-2xl mx-auto px-4 py-8 sm:py-10">
+        <h1 className={`text-2xl sm:text-3xl font-bold text-gray-900 mb-6 ${dmsans.className}`}>
           {jobTitle ? `Apply for ${decodeURIComponent(jobTitle)}` : "Application Form"}
         </h1>
 
         {error && (
-          <div className="mb-6 p-4 bg-red-100 text-red-700 rounded-lg">{error}</div>
+          <div className="mb-4 p-3 bg-red-100 text-red-700 rounded-lg text-sm">{error}</div>
         )}
 
         <form
@@ -124,12 +124,12 @@ function ApplyNowForm() {
           action="https://formsubmit.co/hr@atozee.net"
           method="POST"
           encType="multipart/form-data"
-          className="space-y-4 md:space-y-6 w-full pt-4 md:pt-8"
+          className="space-y-4 w-full pt-4"
         >
           <input type="hidden" name="_captcha" value="false" />
           <input type="hidden" name="jobTitle" value={jobTitle ? decodeURIComponent(jobTitle) : ""} />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 w-full">
+          <div className="grid grid-cols-1 gap-3 w-full">
             <div>
               <input
                 type="text"
@@ -138,7 +138,7 @@ function ApplyNowForm() {
                 placeholder="Name*"
                 value={formData.name}
                 onChange={handleInputChange}
-                className="w-full px-4 md:px-8 py-4 md:py-6 text-base md:text-lg border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#8B5E3C] outline-none transition bg-white placeholder-gray-500"
+                className="w-full px-4 py-3 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#8B5E3C] outline-none transition bg-white placeholder-gray-500"
               />
             </div>
 
@@ -149,7 +149,7 @@ function ApplyNowForm() {
                 value={jobTitle ? decodeURIComponent(jobTitle) : ""}
                 readOnly
                 placeholder="Job Title*"
-                className="w-full px-4 md:px-8 py-4 md:py-6 text-base md:text-lg border border-gray-300 rounded-lg bg-gray-100 cursor-not-allowed"
+                className="w-full px-4 py-3 text-sm border border-gray-300 rounded-lg bg-gray-100 cursor-not-allowed"
               />
             </div>
 
@@ -161,7 +161,7 @@ function ApplyNowForm() {
                 placeholder="Contact No*"
                 value={formData.phone}
                 onChange={handleInputChange}
-                className="w-full px-4 md:px-8 py-4 md:py-6 text-base md:text-lg border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#8B5E3C] outline-none transition bg-white placeholder-gray-500"
+                className="w-full px-4 py-3 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#8B5E3C] outline-none transition bg-white placeholder-gray-500"
               />
             </div>
 
@@ -173,7 +173,7 @@ function ApplyNowForm() {
                 placeholder="Email*"
                 value={formData.email}
                 onChange={handleInputChange}
-                className="w-full px-4 md:px-8 py-4 md:py-6 text-base md:text-lg border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#8B5E3C] outline-none transition bg-white placeholder-gray-500"
+                className="w-full px-4 py-3 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#8B5E3C] outline-none transition bg-white placeholder-gray-500"
               />
             </div>
 
@@ -185,7 +185,7 @@ function ApplyNowForm() {
                 placeholder="Company/Reference*"
                 value={formData.company}
                 onChange={handleInputChange}
-                className="w-full px-4 md:px-8 py-4 md:py-6 text-base md:text-lg border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#8B5E3C] outline-none transition bg-white placeholder-gray-500"
+                className="w-full px-4 py-3 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#8B5E3C] outline-none transition bg-white placeholder-gray-500"
               />
             </div>
 
@@ -197,22 +197,22 @@ function ApplyNowForm() {
                 placeholder="City*"
                 value={formData.city}
                 onChange={handleInputChange}
-                className="w-full px-4 md:px-8 py-4 md:py-6 text-base md:text-lg border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#8B5E3C] outline-none transition bg-white placeholder-gray-500"
+                className="w-full px-4 py-3 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#8B5E3C] outline-none transition bg-white placeholder-gray-500"
               />
             </div>
           </div>
 
           <div className="w-full">
-            <label className={`block mb-2 text-lg font-medium text-gray-700 ${dmsans.className}`}>
+            <label className={`block mb-1 text-sm font-medium text-gray-700 ${dmsans.className}`}>
               Upload CV (PDF/DOC/DOCX, max 5MB)*
             </label>
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-2">
               <label className="flex-1 cursor-pointer">
-                <div className={`flex items-center justify-between px-4 md:px-8 py-4 md:py-6 text-base md:text-lg border-2 border-dashed ${error ? "border-red-500" : "border-[#8B5E3C]"} rounded-lg bg-white hover:bg-gray-50 transition ${dmsans.className}`}>
-                  <span className={`${selectedFileName !== "Choose file..." ? "text-gray-900" : "text-gray-500"}`}>
+                <div className={`flex items-center justify-between px-4 py-3 text-sm border-2 border-dashed ${error ? "border-red-500" : "border-[#8B5E3C]"} rounded-lg bg-white hover:bg-gray-50 transition ${dmsans.className}`}>
+                  <span className={`truncate ${selectedFileName !== "Choose file..." ? "text-gray-900" : "text-gray-500"}`}>
                     {selectedFileName}
                   </span>
-                  <FaUpload className="text-[#8B5E3C]" />
+                  <FaUpload className="text-[#8B5E3C] text-sm" />
                 </div>
                 <input
                   type="file"
@@ -225,40 +225,40 @@ function ApplyNowForm() {
                 />
               </label>
             </div>
-            <p className="mt-1 text-sm text-gray-500">
+            <p className="mt-1 text-xs text-gray-500">
               Accepted formats: PDF, DOC, DOCX (Max size: 5MB)
             </p>
           </div>
 
           <div className="w-full">
-            <label className={`block mb-2 text-lg font-medium text-gray-700 ${dmsans.className}`}>
+            <label className={`block mb-1 text-sm font-medium text-gray-700 ${dmsans.className}`}>
               Cover Letter
             </label>
             <textarea
               name="comments"
-              rows={6}
-              placeholder="Tell us why you'd be a great fit for this position..."
+              rows={4}
+              placeholder="Tell us why you'd be a great fit..."
               value={formData.comments}
               onChange={handleInputChange}
-              className="w-full px-4 md:px-8 py-4 md:py-6 text-base md:text-lg border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#8B5E3C] outline-none transition bg-white min-h-[150px] placeholder-gray-500"
+              className="w-full px-4 py-3 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#8B5E3C] outline-none transition bg-white min-h-[100px] placeholder-gray-500"
             ></textarea>
           </div>
 
-          <div className="pt-2 md:pt-4 w-full">
+          <div className="pt-2 w-full">
             <button
               type="submit"
               disabled={isSubmitting}
-              className={`w-full px-6 md:px-11 py-4 md:py-6 text-lg md:text-xl bg-[#8B5E3C] text-white font-bold rounded-lg hover:bg-[#6F4A2F] transition duration-300 focus:outline-none focus:ring-2 focus:ring-[#6B4F3B] flex items-center justify-center gap-2 ${dmsans.className} ${isSubmitting ? "opacity-75 cursor-not-allowed" : ""}`}
+              className={`w-full px-4 py-3 text-sm bg-[#8B5E3C] text-white font-bold rounded-lg hover:bg-[#6F4A2F] transition duration-300 focus:outline-none focus:ring-2 focus:ring-[#6B4F3B] flex items-center justify-center gap-2 ${dmsans.className} ${isSubmitting ? "opacity-75 cursor-not-allowed" : ""}`}
             >
               {isSubmitting ? (
                 <>
-                  <FaSpinner className="animate-spin" />
+                  <FaSpinner className="animate-spin text-sm" />
                   Submitting...
                 </>
               ) : (
                 <>
                   SUBMIT APPLICATION
-                  <FaArrowRight className="group-hover:translate-x-1 transition-transform" size={16} />
+                  <FaArrowRight className="group-hover:translate-x-1 transition-transform" size={12} />
                 </>
               )}
             </button>
@@ -267,7 +267,7 @@ function ApplyNowForm() {
       </div>
 
       {submitted && (
-        <div className="fixed top-5 right-5 bg-green-600 text-white font-medium py-3 px-6 rounded-lg shadow-lg z-50 animate-slide-in">
+        <div className="fixed top-4 right-4 bg-green-600 text-white font-medium py-2 px-4 rounded-lg shadow-lg z-50 animate-slide-in text-sm">
           ✅ Application submitted successfully!
         </div>
       )}
@@ -280,7 +280,7 @@ export default function ApplyNowPage() {
     <>
       <ContactBar />
       <Navbar />
-      <Suspense fallback={<div className="min-h-screen bg-gray-50 flex items-center justify-center">Loading...</div>}>
+      <Suspense fallback={<div className="min-h-screen bg-gray-50 flex items-center justify-center text-sm">Loading...</div>}>
         <ApplyNowForm />
       </Suspense>
       <Footer />

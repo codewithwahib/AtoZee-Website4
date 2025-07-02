@@ -14,6 +14,7 @@ import FeatureSection from "@/app/Components/standard";
 import CeoMissionSection from "@/app/Components/ceo";
 import ServicesGrid from '../Components/nc';
 import ContactBar from '../Components/topbar';
+import ScrollToTopButton from '../Components/scroll';
 export default function AboutPage() {
   useEffect(() => {
     AOS.init({ duration: 1000, once: true });
@@ -29,6 +30,7 @@ export default function AboutPage() {
       <AboutUsSection/> 
       <ServicesGrid />
       <FeatureSection/>
+      <ScrollToTopButton/>
       {/* <TextImageComponent/>
       <AboutComponent/> */}
       

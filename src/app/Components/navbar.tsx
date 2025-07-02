@@ -16,7 +16,7 @@ const navItems = [
   { href: "/product", label: "Products" },
   { href: "/about", label: "About Us" },
   { 
-    label: "Careers", // Removed href since we don't want it to be clickable
+    label: "Careers",
     subItems: [
       { href: "/careers/introduction", label: "Introduction" },
       { href: "/careers/training-program", label: "Training Program" },
@@ -68,7 +68,7 @@ export default function Navbar() {
             width={500}
             height={550}
             priority
-            className="w-52 md:w-72 lg:w-80"
+            className="w-52 md:w-68 lg:w-76"
           />
         </Link>
 
@@ -84,7 +84,7 @@ export default function Navbar() {
               >
                 <div className="flex items-center cursor-pointer">
                   <span
-                    className={`px-4 py-3 rounded-sm transition-all duration-200 text-lg xl:text-xl tracking-wider ${
+                    className={`px-4 py-3 rounded-sm transition-all duration-200 text-sm xl:text-md tracking-wider ${
                       item.subItems.some(subItem => pathname === subItem.href)
                         ? "bg-[#EEDFCC] text-[#6B4F3B]"
                         : "text-[#8B5E3C] hover:bg-[#F6EBD9] hover:text-[#6B4F3B]"
@@ -112,12 +112,12 @@ export default function Navbar() {
                   </svg>
                 </div>
                 {careersHover && (
-                  <div className="absolute left-0 mt-0 w-72 bg-white shadow-lg rounded-sm z-50 border border-gray-200 overflow-hidden">
+                  <div className="absolute left-0 mt-0 w-56 bg-white shadow-lg rounded-sm z-50 border border-gray-200 overflow-hidden">
                     {item.subItems.map((subItem, index) => (
                       <div key={subItem.href}>
                         <Link
                           href={subItem.href}
-                          className={`block px-6 py-4 text-lg tracking-wider ${
+                          className={`block px-4 py-3 text-sm tracking-wider ${
                             pathname === subItem.href
                               ? "bg-[#EEDFCC] text-[#6B4F3B]"
                               : "text-[#8B5E3C] hover:bg-[#F6EBD9] hover:text-[#6B4F3B]"
@@ -126,7 +126,7 @@ export default function Navbar() {
                           {subItem.label}
                         </Link>
                         {index < item.subItems.length - 1 && (
-                          <hr className="border-t border-gray-200 mx-4" />
+                          <hr className="border-t border-gray-200 mx-2" />
                         )}
                       </div>
                     ))}
@@ -137,7 +137,7 @@ export default function Navbar() {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`px-4 py-3 rounded-sm transition-all duration-200 text-lg xl:text-xl tracking-wider ${
+                className={`px-4 py-3 rounded-sm transition-all duration-200 text-sm xl:text-md tracking-wider ${
                   pathname === item.href
                     ? "bg-[#EEDFCC] text-[#6B4F3B]"
                     : "text-[#8B5E3C] hover:bg-[#F6EBD9] hover:text-[#6B4F3B]"
@@ -190,7 +190,7 @@ export default function Navbar() {
                 <div key={item.label}>
                   <button
                     onClick={toggleCareersMenu}
-                    className={`w-full flex justify-between items-center px-4 py-3 rounded-sm text-xl tracking-wider ${
+                    className={`w-full flex justify-between items-center px-4 py-3 rounded-sm text-sm tracking-wider ${
                       item.subItems.some(subItem => pathname === subItem.href)
                         ? "bg-[#EEDFCC] text-[#6B4F3C]"
                         : "text-[#8B5E3C] hover:bg-[#F6EBD9] hover:text-[#6B4F3B]"
@@ -221,7 +221,7 @@ export default function Navbar() {
                           <Link
                             href={subItem.href}
                             onClick={() => setIsOpen(false)}
-                            className={`block px-5 py-4 text-lg tracking-wider ${
+                            className={`block px-4 py-2 text-xs tracking-wider ${
                               pathname === subItem.href
                                 ? "bg-[#EEDFCC] text-[#6B4F3C]"
                                 : "text-[#8B5E3C] hover:bg-[#F6EBD9] hover:text-[#6B4F3B]"
@@ -242,7 +242,7 @@ export default function Navbar() {
                   key={item.href}
                   href={item.href}
                   onClick={() => setIsOpen(false)}
-                  className={`block px-4 py-3 rounded-sm text-xl tracking-wider ${
+                  className={`block px-4 py-3 rounded-sm text-sm tracking-wider ${
                     pathname === item.href
                       ? "bg-[#EEDFCC] text-[#6B4F3C]"
                       : "text-[#8B5E3C] hover:bg-[#F6EBD9] hover:text-[#6B4F3B]"

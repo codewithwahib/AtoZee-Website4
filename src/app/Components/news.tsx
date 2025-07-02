@@ -90,18 +90,19 @@ export default function NewsSection() {
   if (newsItems.length === 0) return null
 
   return (
-    <section className="py-12 md:py-20 px-4 sm:px-6">
-      <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-serif text-black text-center px-4 tracking-wider pb-12 md:pb-24">
+    <section className="py-8 md:py-12 px-3 sm:px-4">
+      <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold font-serif text-black text-center tracking-wider pb-6 sm:pb-8">
         News & Awards
       </h1>
 
-      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-8 md:gap-12">
-        {/* News Cards - Full width on mobile, left side on desktop */}
-        <div className="w-full lg:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8 order-2 lg:order-1">
+      <div className="max-w-6xl mx-auto flex flex-col lg:flex-row gap-4 sm:gap-6">
+        {/* News Cards */}
+        <div className="w-full lg:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 order-2 lg:order-1">
           {newsItems.map((product, idx) => (
             <div key={idx} className="flex flex-col group">
+              {/* Image at the top */}
               {product.images[0]?.asset.url && (
-                <div className="h-48 sm:h-56 md:h-64 relative mb-3 sm:mb-4 overflow-hidden">
+                <div className="h-32 sm:h-36 md:h-40 relative mb-2 overflow-hidden rounded-sm">
                   <Image
                     src={product.images[0].asset.url}
                     alt={product.name}
@@ -111,35 +112,37 @@ export default function NewsSection() {
                   />
                 </div>
               )}
-              <div className="flex-grow">
-                <div className="flex flex-col sm:flex-row sm:flex-wrap items-baseline gap-1 sm:gap-2 mb-1">
-                  <h3 className="text-lg sm:text-xl font-sans font-light tracking-wider text-black leading-tight">
-                    {product.name}
-                  </h3>
-                  <div className="flex items-center gap-2 w-full sm:w-auto">
-                    <Link href={`/news/${product.slug}`} passHref>
-                      <button className="text-black font-semibold px-3 py-1.5 sm:py-2 hover:bg-gray-100 transition uppercase tracking-wider rounded-md border border-gray-900 flex items-center gap-1 group-hover:translate-x-1 h-[34px] text-sm sm:text-base">
-                        <span className="hidden sm:inline">Read More</span>
-                        <FaArrowRight size={12} />
-                      </button>
-                    </Link>
-                    <p className="text-sm sm:text-md pt-1 sm:pt-2 text-gray-600 whitespace-nowrap pl-2 sm:pl-4 self-center">
-                      {new Date(product.publishDate).toLocaleDateString('en-US', {
-                        year: 'numeric',
-                        month: 'short',
-                        day: 'numeric'
-                      })}
-                    </p>
-                  </div>
-                </div>
+              
+              {/* Title and Date row below image */}
+              <div className="flex justify-between items-start mb-1">
+                <h3 className="text-sm sm:text-base font-sans font-light tracking-wider text-black leading-tight">
+                  {product.name}
+                </h3>
+                <p className="text-xs text-gray-600 whitespace-nowrap pl-2">
+                  {new Date(product.publishDate).toLocaleDateString('en-US', {
+                    year: 'numeric',
+                    month: 'short',
+                    day: 'numeric'
+                  })}
+                </p>
+              </div>
+              
+              {/* Read More button below title/date */}
+              <div className="mt-1">
+                <Link href={`/news/${product.slug}`} passHref>
+                  <button className="text-black font-medium px-2 py-1 hover:bg-gray-100 transition uppercase tracking-wider rounded border border-gray-900 flex items-center gap-1 group-hover:translate-x-1 h-6 text-xs w-fit">
+                    <span>Read More</span>
+                    <FaArrowRight size={10} />
+                  </button>
+                </Link>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Image Carousel - Full width on mobile, right side on desktop */}
+        {/* Image Carousel */}
         <div 
-          className="w-full lg:w-1/2 h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] relative bg-gray-100 overflow-hidden order-1 lg:order-2 mb-6 lg:mb-0"
+          className="w-full lg:w-1/2 h-[200px] sm:h-[280px] md:h-[350px] relative bg-gray-100 overflow-hidden rounded-sm order-1 lg:order-2 mb-3 sm:mb-4"
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >
@@ -163,13 +166,13 @@ export default function NewsSection() {
 
           {/* Navigation Dots */}
           {newsImages.length > 1 && (
-            <div className="absolute bottom-4 left-0 right-0 flex justify-center space-x-2">
+            <div className="absolute bottom-2 left-0 right-0 flex justify-center space-x-1">
               {newsImages.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => setCurrentSlide(index)}
                   className={`h-1 transition-all duration-300 ${
-                    index === currentSlide ? 'w-8 bg-white' : 'w-4 bg-white/50'
+                    index === currentSlide ? 'w-4 bg-white' : 'w-2 bg-white/50'
                   }`}
                   aria-label={`Go to slide ${index + 1}`}
                 />

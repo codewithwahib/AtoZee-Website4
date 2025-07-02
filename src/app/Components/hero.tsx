@@ -42,7 +42,7 @@ export default function Hero() {
   }, [heroImages]);
 
   if (heroImages.length === 0) {
-    return <p className="text-center mt-10 text-xl">Loading Hero Images...</p>;
+    return <p className="text-center mt-10 text-xl"></p>;
   }
 
   return (

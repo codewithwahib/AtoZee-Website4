@@ -64,7 +64,7 @@ const portableTextComponents: Partial<PortableTextReactComponents> = {
     },
   },
   block: {
-    normal: ({ children }: PortableTextBlockProps) => <p className="mb-4">{children}</p>,
+    normal: ({ children }: PortableTextBlockProps) => <p className="mb-2">{children}</p>,
   },
 };
 
@@ -112,58 +112,58 @@ export default function CurrentOpenings() {
       <Navbar />
       
       <main className="min-h-screen">
-        <div className="w-full py-12">
+        <div className="w-full py-4">
           {isLoading ? (
-            <div className="text-center py-8">Loading job openings...</div>
+            <div className="text-center py-4">Loading job openings...</div>
           ) : jobs.length === 0 ? (
-            <div className="text-center py-8 text-gray-500">
-              Currently no job openings available. Please check back later.
+            <div className="text-center py-4 text-gray-500">
+              Currently no job openings available.
             </div>
           ) : (
-            <div className="space-y-4 mx-auto" style={{ width: '90%' }}>
+            <div className="space-y-2 mx-auto w-[90%] max-w-4xl">
               {jobs.map((job) => (
-                <div key={job._id} className="border border-gray-200 overflow-hidden w-full">
+                <div key={job._id} className="border border-gray-200 rounded-md overflow-hidden w-full">
                   <div 
-                    className="flex justify-between items-center p-6 cursor-pointer hover:bg-gray-50 transition-colors"
+                    className="flex justify-between items-center p-3 cursor-pointer hover:bg-gray-50 transition-colors"
                     onClick={() => toggleJobDetails(job._id)}
                     role="button"
                     tabIndex={0}
                     onKeyDown={(e) => e.key === 'Enter' && toggleJobDetails(job._id)}
                   >
-                    <h2 className={`text-3xl tracking-wider font-bold text-gray-900 ${dmsans.className}`}>
+                    <h2 className={`text-lg font-bold text-gray-900 ${dmsans.className}`}>
                       {job.title}
                     </h2>
                     {expandedJobId === job._id ? (
-                      <FaChevronUp className="text-gray-500" />
+                      <FaChevronUp className="text-gray-500 text-sm" />
                     ) : (
-                      <FaChevronDown className="text-gray-500" />
+                      <FaChevronDown className="text-gray-500 text-sm" />
                     )}
                   </div>
 
                   {expandedJobId === job._id && (
-                    <div className="p-6 pt-6 border-t border-gray-100 space-y-6">
-                      <div className="grid grid-cols-2 gap-4">
+                    <div className="p-3 pt-3 border-t border-gray-100 space-y-3">
+                      <div className="grid grid-cols-1 gap-2">
                         <div>
-                          <h3 className={`text-3xl tracking-wider font-bold text-[#8B5E3C] ${dmsans.className}`}>Department:</h3>
-                          <p className={`text-base text-xl pt-5 font-medium tracking-wider ${dmsans.className}`}>{job.department}</p>
+                          <h3 className={`text-lg font-bold text-[#8B5E3C] ${dmsans.className}`}>Department:</h3>
+                          <p className={`text-sm pt-2 font-medium ${dmsans.className}`}>{job.department}</p>
                         </div>
                         <div>
-                          <h3 className={`text-3xl tracking-wider font-bold text-[#8B5E3C] ${dmsans.className}`}>Location:</h3>
-                          <p className={`text-base text-xl pt-5 font-medium tracking-wider ${dmsans.className}`}>{job.location}</p>
+                          <h3 className={`text-lg font-bold text-[#8B5E3C] ${dmsans.className}`}>Location:</h3>
+                          <p className={`text-sm pt-2 font-medium ${dmsans.className}`}>{job.location}</p>
                         </div>
                         <div>
-                          <h3 className={`text-3xl tracking-wider font-bold text-[#8B5E3C] ${dmsans.className}`}>Job Type:</h3>
-                          <p className={`text-base text-xl pt-5 font-medium tracking-wider ${dmsans.className}`}>{job.type}</p>
+                          <h3 className={`text-lg font-bold text-[#8B5E3C] ${dmsans.className}`}>Job Type:</h3>
+                          <p className={`text-sm pt-2 font-medium ${dmsans.className}`}>{job.type}</p>
                         </div>
                         <div>
-                          <h3 className={`text-3xl tracking-wider font-bold text-[#8B5E3C] ${dmsans.className}`}>Experience Level:</h3>
-                          <p className={`text-xl font-medium pt-5 tracking-wider ${dmsans.className}`}>{job.experienceLevel}</p>
+                          <h3 className={`text-lg font-bold text-[#8B5E3C] ${dmsans.className}`}>Experience Level:</h3>
+                          <p className={`text-sm pt-2 font-medium ${dmsans.className}`}>{job.experienceLevel}</p>
                         </div>
                       </div>
 
                       <div>
-                        <h3 className={`text-3xl tracking-wider font-bold text-[#8B5E3C] ${dmsans.className}`}>Job Description:</h3>
-                        <div className={`text-base text-xl pt-5 font-medium tracking-wider ${dmsans.className}`}>
+                        <h3 className={`text-lg font-bold text-[#8B5E3C] ${dmsans.className}`}>Job Description:</h3>
+                        <div className={`text-sm pt-2 font-medium ${dmsans.className}`}>
                           <PortableText
                             value={job.description}
                             components={portableTextComponents}
@@ -172,8 +172,8 @@ export default function CurrentOpenings() {
                       </div>
                       
                       <div>
-                        <h3 className={`text-3xl tracking-wider font-bold text-[#8B5E3C] ${dmsans.className}`}>Requirements:</h3>
-                        <ul className={`text-base text-xl pt-5 font-medium tracking-wider ${dmsans.className}`}>
+                        <h3 className={`text-lg font-bold text-[#8B5E3C] ${dmsans.className}`}>Requirements:</h3>
+                        <ul className={`text-sm pt-2 font-medium ${dmsans.className}`}>
                           {job.requirements?.map((req, i) => (
                             <li key={i}>
                               <PortableText value={req} components={portableTextComponents} />
@@ -182,12 +182,12 @@ export default function CurrentOpenings() {
                         </ul>
                       </div>
 
-                      <div className="flex justify-between items-center">
-                        <div className={`text-base text-xl font-medium tracking-wider ${dmsans.className}`}>
+                      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-2">
+                        <div className={`text-sm font-medium ${dmsans.className}`}>
                           <div>
                             Posted: {new Date(job.postedDate).toLocaleDateString('en-US', {
                               year: 'numeric',
-                              month: 'long',
+                              month: 'short',
                               day: 'numeric'
                             })}
                           </div>
@@ -195,7 +195,7 @@ export default function CurrentOpenings() {
                             <div>
                               Apply by: {new Date(job.applicationDeadline).toLocaleDateString('en-US', {
                                 year: 'numeric',
-                                month: 'long',
+                                month: 'short',
                                 day: 'numeric'
                               })}
                             </div>
@@ -203,10 +203,10 @@ export default function CurrentOpenings() {
                         </div>
                         <Link
                           href={`/careers/apply-now?job=${encodeURIComponent(job.title)}`}
-                          className={`group px-8 py-3 border-2 border-[#8B5E3C] text-[#8B5E3C] hover:text-white text-2xl font-bold tracking-wider rounded-lg hover:bg-[#8B5E3C] transition-colors ${dmsans.className} flex items-center gap-2`}
+                          className={`group px-3 py-1 border border-[#8B5E3C] text-[#8B5E3C] hover:text-white text-sm font-bold rounded hover:bg-[#8B5E3C] transition-colors ${dmsans.className} flex items-center gap-1 sm:ml-auto`}
                         >
                           APPLY NOW
-                          <FaArrowRight className="group-hover:translate-x-1 transition-transform" size={14} />
+                          <FaArrowRight className="group-hover:translate-x-1 transition-transform" size={10} />
                         </Link>
                       </div>
                     </div>
