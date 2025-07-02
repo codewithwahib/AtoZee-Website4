@@ -18,7 +18,7 @@ const ContactBar = () => {
         {/* Left Side - Email */}
         <div className="flex items-center">
           <a 
-            href="mailto:contact@example.com" 
+            href="mailto:info@atozee.net" 
             className="flex items-center gap-3 hover:text-blue-600 transition-colors group"
             aria-label="Email us"
           >
@@ -34,7 +34,7 @@ Get Free Inquiry            </span>
  
          <div className="flex items-center">
           <a 
-            href="mailto:contact@example.com" 
+            href="mailto:info@atozee.net" 
             className="flex items-center gap-3 hover:text-blue-600 transition-colors group"
             aria-label="Email us"
           >
@@ -50,7 +50,7 @@ info@atozee.net            </span>
         {/* Middle - Phone Number */}
         <div className="flex items-center">
           <a 
-            href="tel:+1234567890" 
+            href="tel:03218752630" 
             className="flex items-center gap-3 hover:text-blue-600 transition-colors group"
             aria-label="Call us"
           >
