@@ -4,15 +4,15 @@ import { DM_Sans } from 'next/font/google';
 import Navbar from '@/app/Components/navbar';
 import Footer from '@/app/Components/footer';
 import ContactBar from '@/app/Components/topbar';
-import { Lato } from 'next/font/google';
+// import { Lato } from 'next/font/google';
 import ScrollToTopButton from '../Components/scroll';
 
 
-const lato = Lato({
-  subsets: ['latin'],
-  weight: ['400', '700'],
-  variable: '--font-lato'
-});
+// const lato = Lato({
+//   subsets: ['latin'],
+//   weight: ['400', '700'],
+//   variable: '--font-lato'
+// });
 
 const dmSans = DM_Sans({
   subsets: ['latin'],

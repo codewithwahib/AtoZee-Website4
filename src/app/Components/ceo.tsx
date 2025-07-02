@@ -31,10 +31,10 @@ export default function CeoMissionSection() {
         
         {/* Content */}
         <div className="relative z-10 max-w-[600px] mt-8">
-          <h3 className={`text-3xl pl-4 pr-4 pt-2 pb-2 font-bold text-black mb-6 uppercase tracking-wider bg-white inline-block ${dmsans.className}`}>
+          <h3 className={`text-2xl pl-4 pr-4 pt-2 pb-2 font-bold text-black mb-6 uppercase tracking-wider bg-white inline-block ${dmsans.className}`}>
             CEO&apos;s Message
           </h3>
-          <p className={`text-white text-lg tracking-wider leading-relaxed mb-8 italic ${dmsans.className}`}>
+          <p className={`text-white text-md tracking-wider leading-relaxed mb-8 italic ${dmsans.className}`}>
             At A to Zee Switchgear, we are committed to delivering innovative and reliable electrical solutions that power progress with excellence. Our dedication to quality, safety, and customer satisfaction drives us to be your trusted partner in electrical engineering.
           </p>
           <Link href="/ceo-message" passHref>
@@ -48,10 +48,10 @@ export default function CeoMissionSection() {
 
       {/* Right side (Mission) */}
       <div className="md:w-1/2 flex flex-col justify-center items-start p-8 md:p-12 bg-white text-black min-h-[350px] md:min-h-[450px] border border-gray-200">
-        <h3 className={`text-3xl px-4 pt-2 pb-10 font-bold text-black mb-6 uppercase tracking-wider relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[1px] after:bg-gray-200 ${dmsans.className}`}>
+        <h3 className={`text-2xl px-4 pt-2 pb-10 font-bold text-black mb-6 uppercase tracking-wider relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[1px] after:bg-gray-200 ${dmsans.className}`}>
           OUR STORY
         </h3>
-        <p className={`text-lg leading-relaxed mb-8 tracking-wider pb-6 italic text-gray-600 ${dmsans.className}`}>
+        <p className={`text-md leading-relaxed mb-8 tracking-wider pb-6 italic text-gray-600 ${dmsans.className}`}>
           At A to Zee Switchgear, we began with a vision to revolutionize electrical solutions through innovation and unwavering quality. Today, we stand as a trusted leader, powering industries with reliability, safety, and cutting-edge technology—every connection engineered for excellence.
 
 

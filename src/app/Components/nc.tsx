@@ -74,7 +74,7 @@ export default function ServicesGrid() {
                 </div>
               </div>
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4">
-                <h3 className="text-white text-2xl font-semibold tracking-widest pl-4 relative before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:h-6 before:w-0.5 before:bg-white">
+                <h3 className="text-white text-md font-semibold tracking-widest pl-4 relative before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:h-6 before:w-0.5 before:bg-white">
                   {service.name}
                 </h3>
               </div>

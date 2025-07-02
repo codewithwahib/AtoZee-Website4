@@ -120,11 +120,11 @@ const AboutUsSection = () => {
             <h1 className={`text-lg font-bold text-gray-800 mb-4 tracking-wider ${dmsans.className}`}>
               ABOUT US
             </h1>
-            <p className={`text-3xl md:text-4xl font-semibold tracking-wide text-black mb-6 md:mb-8 leading-tight ${dmsans.className}`}>
+            <p className={`text-2xl md:text-3xl font-semibold tracking-wide text-black mb-6 md:mb-8 leading-tight ${dmsans.className}`}>
               A to Zee Switchgear Engineering with Schneider Electric
             </p>
 
-            <p className={`text-gray-700 mb-8 md:mb-10 leading-relaxed font-normal text-base md:text-lg tracking-wider ${dmsans.className}`}>
+            <p className={`text-gray-700 mb-8 md:mb-10 leading-relaxed font-normal text-base md:text-sm tracking-wider ${dmsans.className}`}>
               A to Zee Systems offers comprehensive electro-technical solutions, from low-voltage panels to process automation, serving industries nationwide. With 25 years of expertise, we provide safe power distribution and innovative technologies under one roof. Our patented products and customer-specific project management ensure efficient, end-to-end solutions. Backed by a vast sales and service network, we combine local tradition with global reach. Trusted by industries and power suppliers, we deliver reliable, integrated systems for complex electrical needs. A to Zee Systems—your partner for cutting-edge power distribution and automation.
             </p>
 
